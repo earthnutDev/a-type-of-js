@@ -30,9 +30,7 @@
  *  - uint8clampedarray  8 位无符号整型固定数组 {@link Uint8ClampedArray}
  *  - sharedarraybuffer 可以用来在共享内存上创建视图的二进制数据缓冲区，目前，浏览器不支持 {@link SharedArrayBuffer}
  *  - promise 异步操作最终的完成（或失败）以及其结果值 {@link Promise}
- *  - window  全局对象 {@link Window}、{@link globalThis}
  *  - dataview 从二进制 ArrayBuffer 对象中读写多种数值类型的底层接口  {@link DataView}
- * - atomics 命名空间对象包含对 SharedArrayBuffer 和 ArrayBuffer 对象执行原子操作的静态方法 {@link Atomics}
  *  - arraybuffer 通用的原始二进制数据缓冲区  {@link ArrayBuffer}
  *  - weakmap 弱映射 {@link WeakMap}
  *  - weakset 弱集合 {@link WeakSet}
@@ -105,9 +103,7 @@ export type Typeof =
   | 'sharedarraybuffer'
   | 'promise'
   | 'asyncfunction'
-  | 'window'
   | 'dataview'
-  | 'atomics'
   | 'arraybuffer'
   | 'audiobuffer'
   | 'intl.collator'
@@ -144,7 +140,7 @@ export function typeOf(measuredData: unknown): Typeof {
     | 'object'
     | 'function' = typeof measuredData;
 
-  return ((_t !== 'object' && _t) ||
+  return ((_t !== 'object' && _t !== 'function' && _t) ||
     (measuredData === null && 'null') ||
     Reflect.apply(Object.prototype.toString, measuredData, [])
       .replace(/^.*\s(.*)]$/, '$1')
@@ -401,15 +397,6 @@ export function isArrayBuffer<T extends ArrayBufferLike = ArrayBufferLike>(
 export function isRegExp(measuredData: unknown): measuredData is RegExp {
   return typeOf(measuredData) === 'regexp';
 }
-/**************************************
- *
- * 当前数据是否为 window
- *
- *
- **************************************/
-export function isWindow(measuredData: unknown): measuredData is Window {
-  return typeOf(measuredData) === 'window';
-}
 
 /**************************************
  *
@@ -507,15 +494,6 @@ export function isFloat64Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
 >(measuredData: unknown): measuredData is Float64Array<TArrayBuffer> {
   return typeOf(measuredData) === 'float64array';
-}
-
-/**************************************
- *
- * 当前数据是否为 atomics
- *
- **************************************/
-export function isAtomics(measuredData: unknown): measuredData is Atomics {
-  return typeOf(measuredData) === 'atomics';
 }
 
 /**************************************

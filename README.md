@@ -1,6 +1,6 @@
 # a-type-of-js
 
-| [中文 🇨🇳](https://github.com/earthnutDev/a-type-of-js/blob/main/README-zh.md) ｜English 🇬🇧 | [change 📝 log](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG.md) |[submit 🙋‍♂️ issue](https://github.com/earthnutDev/a-type-of-js/issues)|
+| [中文 🇨🇳](https://github.com/earthnutDev/a-type-of-js/blob/main/README-zh.md) ｜English 🌍 | [change 📝 log](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG-en.md) |[submit 🙋‍♂️ issue](https://github.com/earthnutDev/a-type-of-js/issues)|
 
 A simple type determination tool
 
@@ -26,10 +26,13 @@ import { isString, isNumber } from 'a-type-of-js';
 function doSomething(value: string | number) {
   if (isString(value)) {
     value.toLocaleUpperCase();
-  } else {
+  } else if (isNumber(value)) {
     value.toFixed(2);
   }
 }
+
+doSomething('hello'); // HELLO
+doSomething(1); // 1.00
 ```
 
 Documents provide type detection:
@@ -59,7 +62,6 @@ Documents provide type detection:
 - `isDataView` DataView
 - `isArrayBuffer` ArrayBuffer
 - `isRegExp` regex, `RegExp` object-built regex
-- `isWindow` Window
 - `isSharedArrayBuffer` SharedArrayBuffer
 - `isUint8ClampedArray` Uint8ClampedArray
 - `isInt8Array` Int8Array
@@ -71,7 +73,6 @@ Documents provide type detection:
 - `isUint32Array` Uint32Array
 - `isFloat32Array` Float32Array
 - `isFloat64Array` Float64Array
-- `isAtomics` Atomics namespace object contains static methods that perform atomic operations on the SharedArrayBuffer and ArrayBuffer objects
 - `isIntlCollator` Intl.Collator
 - `isIntlDateTimeFormat` Intl.DateTimeFormat
 - `isIntlDisplayNames` Intl.DisplayNames

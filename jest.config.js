@@ -2,7 +2,7 @@
 export default () => {
   return {
     verbose: true,
-    testEnvironment: 'node',
+    testEnvironment: 'jsdom',
     transform: {
       '^.+\\.tsx?$': [
         'ts-jest',

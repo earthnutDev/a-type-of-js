@@ -1,6 +1,6 @@
 # a-type-of-js
 
-| 中文 🇨🇳 ｜[English 🇬🇧](https://github.com/earthnutDev/a-type-of-js/blob/main/README.md) | [查看 📝 日志](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG.md) |[bug 🪲 提交](https://github.com/earthnutDev/a-type-of-js/issues)|
+| 中文 🇨🇳 ｜[English 🌍](https://github.com/earthnutDev/a-type-of-js/blob/main/README.md) | [查看 📝 日志](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG.md) |[bug 🪲 提交](https://github.com/earthnutDev/a-type-of-js/issues)|
 
 一个简单的类型判断工具
 
@@ -26,10 +26,13 @@ import { isString, isNumber } from 'a-type-of-js';
 function doSomething(value: string | number) {
   if (isString(value)) {
     value.toLocaleUpperCase();
-  } else {
+  } else if (isNumber(value)) {
     value.toFixed(2);
   }
 }
+
+doSomething('hello'); // HELLO
+doSomething(1); // 1.00
 ```
 
 文档提供类型检测：
@@ -59,7 +62,6 @@ function doSomething(value: string | number) {
 - `isDataView` DataView
 - `isArrayBuffer` ArrayBuffer
 - `isRegExp` 正则、`RegExp` 对象构建的正则
-- `isWindow` Window
 - `isSharedArrayBuffer` SharedArrayBuffer
 - `isUint8ClampedArray` Uint8ClampedArray
 - `isInt8Array` Int8Array
@@ -71,7 +73,6 @@ function doSomething(value: string | number) {
 - `isUint32Array` Uint32Array
 - `isFloat32Array` Float32Array
 - `isFloat64Array` Float64Array
-- `isAtomics` Atomics 命名空间对象包含对 SharedArrayBuffer 和 ArrayBuffer 对象执行原子操作的静态方法
 - `isIntlCollator` Intl.Collator
 - `isIntlDateTimeFormat` Intl.DateTimeFormat
 - `isIntlDisplayNames` Intl.DisplayNames
