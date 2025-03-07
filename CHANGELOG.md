@@ -1,5 +1,9 @@
 # a-type-of-js
 
+## 0.0.2 (3 月 7 日 2025 年)
+
+- 使用 [shields](https://img.shields.io) 构建徽章
+
 ## 0.0.1 (3 月 7 日 2025 年)
 
 - 移除了 `isAtomics` 方法。因为 `Atomics` 仅是一个方法集合，没有实例。同样的还有 `Math、JSON、Reflect、Intl`

@@ -1,6 +1,6 @@
 # a-type-of-js
 
-| [中文 🇨🇳](https://github.com/earthnutDev/a-type-of-js/blob/main/README-zh.md) ｜English 🌍 | [change 📝 log](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG-en.md) |[submit 🙋‍♂️ issue](https://github.com/earthnutDev/a-type-of-js/issues)|
+[![🇨🇳 中文](<https://img.shields.io/badge/🇨🇳-中_%20_文-rgb(36,36,36)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/README-zh.md) ![🌍 English](<https://img.shields.io/badge/🌍-English-rgb(125, 255, 125)>) [![👀 change log](<https://img.shields.io/badge/👀-change_%20_log-rgb(0,125,206)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG-en.md) [![submit 🙋‍♂️ issue](<https://img.shields.io/badge/☣️-submit_%20_issue-rgb(255,0,63)>)](https://github.com/earthnutDev/a-type-of-js/issues)
 
 A simple type determination tool
 

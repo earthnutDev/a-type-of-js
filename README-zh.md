@@ -1,6 +1,6 @@
 # a-type-of-js
 
-| 中文 🇨🇳 ｜[English 🌍](https://github.com/earthnutDev/a-type-of-js/blob/main/README.md) | [查看 📝 日志](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG.md) |[bug 🪲 提交](https://github.com/earthnutDev/a-type-of-js/issues)|
+![中文 🇨🇳](<https://img.shields.io/badge/🇨🇳-中_%20_文-rgb(125,255,125)>) [![English 🌍](<https://img.shields.io/badge/🌍-English-rgb(36,36,36)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/README.md) [![查看 📔 日志](<https://img.shields.io/badge/👀-日_%20_志-rgb(0,125,206)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG-en.md) [![bug 🙋‍♂️ 提交](<https://img.shields.io/badge/☣️-bug_%20_提交-rgb(255,0,63)>)](https://github.com/earthnutDev/a-type-of-js/issues)
 
 一个简单的类型判断工具
 
