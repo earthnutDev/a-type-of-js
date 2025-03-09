@@ -17,7 +17,7 @@ import {
   isUndefined,
   isInt16Array,
   isFloat32Array,
-} from '../index';
+} from './index';
 
 /// 待测试的数据
 const testData: {

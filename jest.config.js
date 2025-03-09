@@ -12,6 +12,6 @@ export default () => {
         },
       ],
     },
-    testMatch: ['**/__tests__/**/*.test.(js|ts|tsx)'],
+    testMatch: ['**/*.test.(js|ts|tsx)'],
   };
 };
