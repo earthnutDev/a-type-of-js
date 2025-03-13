@@ -153,7 +153,7 @@ export function typeOf(measuredData: unknown): Typeof {
  *
  **************************************/
 export function isString(measuredData: unknown): measuredData is string {
-  return typeof measuredData === 'string';
+  return typeOf(measuredData) === 'string';
 }
 
 /**************************************
@@ -162,7 +162,7 @@ export function isString(measuredData: unknown): measuredData is string {
  *
  **************************************/
 export function isNumber(measuredData: unknown): measuredData is number {
-  return typeof measuredData === 'number';
+  return typeOf(measuredData) === 'number';
 }
 
 /**************************************
@@ -172,7 +172,7 @@ export function isNumber(measuredData: unknown): measuredData is number {
  **************************************/
 
 export function isBoolean(measuredData: unknown): measuredData is boolean {
-  return typeof measuredData === 'boolean';
+  return typeOf(measuredData) === 'boolean';
 }
 
 /**************************************
@@ -182,7 +182,7 @@ export function isBoolean(measuredData: unknown): measuredData is boolean {
  **************************************/
 
 export function isNull(measuredData: unknown): measuredData is null {
-  return measuredData === null;
+  return typeOf(measuredData) === 'null';
 }
 
 /**************************************
@@ -191,7 +191,7 @@ export function isNull(measuredData: unknown): measuredData is null {
  *
  **************************************/
 export function isUndefined(measuredData: unknown): measuredData is undefined {
-  return measuredData === undefined;
+  return typeOf(measuredData) === 'undefined';
 }
 
 /**************************************
@@ -229,7 +229,7 @@ export function isArray(measuredData: unknown): measuredData is Array<unknown> {
  *
  **************************************/
 export function isSymbol(measuredData: unknown): measuredData is symbol {
-  return typeof measuredData === 'symbol';
+  return typeOf(measuredData) === 'symbol';
 }
 
 /**************************************
@@ -238,7 +238,7 @@ export function isSymbol(measuredData: unknown): measuredData is symbol {
  *
  **************************************/
 export function isBigInt(measuredData: unknown): measuredData is bigint {
-  return typeof measuredData === 'bigint';
+  return typeOf(measuredData) === 'bigint';
 }
 
 /**************************************
@@ -249,11 +249,7 @@ export function isBigInt(measuredData: unknown): measuredData is bigint {
 export function isPlainObject<T extends object>(
   measuredData: unknown,
 ): measuredData is T {
-  return (
-    typeOf(measuredData) === 'object' &&
-    measuredData !== null &&
-    !Array.isArray(measuredData)
-  );
+  return typeOf(measuredData) === 'object';
 }
 
 /**************************************
