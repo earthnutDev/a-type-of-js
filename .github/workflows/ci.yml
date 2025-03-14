@@ -29,10 +29,8 @@ jobs:
           files: ./coverage/lcov.info
           verbose: true
 
-      - name: make test-coverage directory
-        run: make test-coverage-${{ matrix.test_number }}
       - name: copy coverage to test-coverage directory
         uses: coverallsapp/github-action@v2
         with:
-          flag-name: run-${{ join(matrix.*, '-') }}
-          parallel: true
+          github-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
+          path-to-lcov: ./coverage/lcov.info

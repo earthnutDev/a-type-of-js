@@ -20,6 +20,7 @@
     "prettier": "ixxx cls && prettier . --write",
     "pub": "npm run build && cd dist && npm publish --access public && cd ..",
     "test": "npx ixxx clear && npx jest --coverage",
+    "report": "cat ./coverage/lcov.info | coveralls",
     "coverage": "codecov"
   },
   "files": [
