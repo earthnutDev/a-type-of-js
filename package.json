@@ -67,7 +67,7 @@
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/jest": "^29.5.14",
     "@types/node": "^20.14.13",
-    "codecov": "^3.8.2",
+    "codecov": "^3.8.3",
     "coveralls": "^3.1.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
