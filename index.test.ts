@@ -17,6 +17,10 @@ import {
   isUndefined,
   isInt16Array,
   isFloat32Array,
+  isUint16Array,
+  isUint32Array,
+  isIntlCollator,
+  isIntlDateTimeFormat,
 } from './index';
 
 /// 待测试的数据
@@ -307,6 +311,29 @@ describe('Type Detection Functions', () => {
   describe('isInt16Array function', () => {
     test.each(testList)('should return %p for %p', (expectedType, value) => {
       expect(isInt16Array(value)).toBe(expectedType === 'int16array');
+    });
+  });
+
+  describe('isUint16Array function', () => {
+    test.each(testList)('should return %p for %p', (expectedType, value) => {
+      expect(isUint16Array(value)).toBe(expectedType === 'uint16array');
+    });
+  });
+  describe('isUint32Array function', () => {
+    test.each(testList)('should return %p for %p', (expectedType, value) => {
+      expect(isUint32Array(value)).toBe(expectedType === 'uint32array');
+    });
+  });
+  describe('isIntlCollator function', () => {
+    test.each(testList)('should return %p for %p', (expectedType, value) => {
+      expect(isIntlCollator(value)).toBe(expectedType === 'intl.collator');
+    });
+  });
+  describe('isIntlDateTimeFormat function', () => {
+    test.each(testList)('should return %p for %p', (expectedType, value) => {
+      expect(isIntlDateTimeFormat(value)).toBe(
+        expectedType === 'intl.datetimeformat',
+      );
     });
   });
 });
