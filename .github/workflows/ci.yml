@@ -6,6 +6,7 @@ jobs:
   test:
     name: Run tests and collect coverage
     runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, 'version')
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,3 +28,11 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage/lcov.info
           verbose: true
+
+      - name: make test-coverage directory
+        run: make test-coverage-${{ matrix.test_number }}
+      - name: copy coverage to test-coverage directory
+        uses: coverallsapp/github-action@v2
+        with:
+          flag-name: run-${{ join(matrix.*, '-') }}
+          parallel: true
