@@ -1,8 +1,12 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} **/
 export default () => {
   return {
+    collectCoverage: true,
+    collectCoverageFrom: ['index.ts'],
+    coverageReporters: ['text', 'lcov', 'html', 'text-summary'],
+    preset: 'ts-jest',
     verbose: true,
-    testEnvironment: 'jsdom',
+    testEnvironment: 'node',
     transform: {
       '^.+\\.tsx?$': [
         'ts-jest',
@@ -13,5 +17,6 @@ export default () => {
       ],
     },
     testMatch: ['**/*.test.(js|ts|tsx)'],
+    coveragePathIgnorePatterns: ['/node_modules/', '/dist/', 'test', '.*.d.ts'],
   };
 };
