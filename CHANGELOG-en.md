@@ -2,6 +2,10 @@
 
 [![中文 🇨🇳](<https://img.shields.io/badge/🇨🇳-自述_%20_文件-rgb(255,12,36)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/README-zh.md) [![English 🌍](<https://img.shields.io/badge/🌍-README-rgb(0,0,0)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/README.md) [![查看 📔 日志](<https://img.shields.io/badge/👀-日_%20_志-rgb(0,125,206)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG.md) ![查看 📔 日志](<https://img.shields.io/badge/👀-Change_%20_log-rgb(0,125,206)?style=social>)
 
+## 0.0.5 (3/16/2025)
+
+- The previous release unexpectedly removed a packaged dependency `tslib` that resulted in a packaging exception unnoticed, fixed
+
 ## 0.0.4 (3/13/2025)
 
 - add test coverage percentage badge
