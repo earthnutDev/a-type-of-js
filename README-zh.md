@@ -26,7 +26,7 @@ if (typeOf(num) === 'number') {
 }
 ```
 
-使用 `ts` 中的 is 类型判断来进行类型安全收缩
+### 使用 `ts` 中的 is 类型判断来进行类型安全收缩
 
 ```ts
 import { isString, isNumber } from 'a-type-of-js';
@@ -43,7 +43,43 @@ doSomething('hello'); // HELLO
 doSomething(1); // 1.00
 ```
 
-文档提供类型检测：
+### 向 `as` 说 'no'
+
+en，且当是脱裤子放屁吧
+
+```ts
+import { isType } from 'a-type-of-js';
+
+interface Person {
+    name: string;
+    age: number;
+}
+
+
+function doSomething(value: string | number | boolean | ) {
+
+    /// use judgment as a type judgment
+    if (isType<Person>(value, () => (value && value.name === 'earthnut' && value.age === 18))) {
+      console.log('value is Person');
+      return;
+    }
+
+    /// as tisType
+    if (isType<string>(value)) {
+      value.toLocaleUpperCase();
+      return;
+    }
+
+    /// use judgment
+
+    if (isType<boolean>(value, Boolean(value) === true )) {
+      console.log('value is true');
+      return;
+    }
+}
+```
+
+### 文档提供类型检测
 
 - `isString` 字符串、`String` 对象构建的字符串
 - `isNumber` 数字、`Number` 对象构建的数字

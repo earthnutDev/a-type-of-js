@@ -26,7 +26,7 @@ if (typeOf(num) === 'number') {
 }
 ```
 
-Use the is type judgment in 'ts' for type-safe contraction
+### Use the is type judgment in 'ts' for type-safe contraction
 
 ```ts
 import { isString, isNumber } from 'a-type-of-js';
@@ -43,7 +43,43 @@ doSomething('hello'); // HELLO
 doSomething(1); // 1.00
 ```
 
-Documents provide type detection:
+### not `as`
+
+Use functions instead of as, which in China is called taking off your pants and farting. A better analogy might be suspenders with no pants.
+
+```ts
+import { isType } from 'a-type-of-js';
+
+interface Person {
+    name: string;
+    age: number;
+}
+
+
+function doSomething(value: string | number | boolean | ) {
+
+    /// use judgment as a type judgment
+    if (isType<Person>(value, () => (value && value.name === 'earthnut' && value.age === 18))) {
+      console.log('value is Person');
+      return;
+    }
+
+    /// as tisType
+    if (isType<string>(value)) {
+      value.toLocaleUpperCase();
+      return;
+    }
+
+    /// use judgment
+
+    if (isType<boolean>(value, Boolean(value) === true )) {
+      console.log('value is true');
+      return;
+    }
+}
+```
+
+### Documents provide type detection
 
 - `isString` strings, `String` objects
 - `isNumber` number, `Number` object
