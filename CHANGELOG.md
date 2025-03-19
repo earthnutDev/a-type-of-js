@@ -2,6 +2,10 @@
 
 [![中文 🇨🇳](<https://img.shields.io/badge/🇨🇳-自述_%20_文件-rgb(255,12,36)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/README-zh.md) [![English 🌍](<https://img.shields.io/badge/🌍-README-rgb(0,0,0)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/README.md) ![查看 📔 日志](<https://img.shields.io/badge/👀-日_%20_志-rgb(0,125,206)?style=social>) [![查看 📔 日志](<https://img.shields.io/badge/👀-Change_%20_log-rgb(0,125,206)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG-en.md)
 
+## 0.0.7 (3 月 19 日 2025 年)
+
+- 维护了注释
+
 ## 0.0.6 (3 月 19 日 2025 年)
 
 - 修复了 `isEvalError`、`isRangeError`、`isReferenceError`、`isSyntaxError`、`isTypeError`、`isURIError`、`isAggregateError` 返回值不准确的问题

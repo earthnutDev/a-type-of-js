@@ -7,6 +7,27 @@ import { Typeof } from './types';
  *
  * @param {*} o 任意数据
  * @return {*}  返回是一个字符串 {@link String}，包含于   @see  {@link TypeOf}
+ * @author: [earthnut](https://earthnut.dev)
+ * @example
+ *
+ * ```ts
+ * import  { typeOf } from 'a-type-of-js';
+ *
+ *  console.log(typeOf(1) === 'number'); // true
+ *  console.log(typeOf('1') === 'string'); // true
+ *  console.log(typeOf(null) === 'null'); // true
+ *  console.log(typeOf(undefined) === 'undefined'); // true
+ *  console.log(typeOf(true) === 'boolean'); // true
+ *  console.log(typeOf(Symbol()) === 'symbol');
+ *  console.log(typeOf(new Date()) === 'date');
+ *  console.log(typeOf([]) === 'array');
+ *  console.log(typeOf(new Set()) === 'set');
+ *  console.log(typeOf(new Map()) === 'map');
+ *  console.log(typeOf(new Error()) === 'error');
+ *  console.log(typeOf(new Promise(() => {})) === 'promise');
+ *  ...
+ *
+ * ```
  *
  **************************************/
 export function typeOf(measuredData: unknown): Typeof {

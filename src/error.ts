@@ -4,6 +4,19 @@ import { typeOf } from './typeOf';
  *
  * 当前数据是否为 Error
  *
+ * @param measuredData 待测试的数据
+ * @returns {true | false}
+ * @example
+ *
+ * ```ts
+ *   import { isError } from 'a-type-of-js';
+ *
+ *   console.log(isError(new Error('test'))); // true
+ *   console.log(isError(new isEvalError('test'))); // false
+ *   console.log(isError(new RangeError('test'))); // false
+ *   console.log(isError(new ReferenceError('test'))); // false
+ * ```
+ *
  **************************************/
 export function isError(measuredData: unknown): measuredData is Error {
   return typeOf(measuredData) === 'error';
@@ -21,6 +34,17 @@ export function isEvalError(measuredData: unknown): measuredData is EvalError {
  *
  * 当前数据是否为 RangeError
  *
+ * @param measuredData 待测试的数据
+ * @returns {true | false}
+ * @example
+ *
+ * ```ts
+ *   import { isRangeError } from 'a-type-of-js';
+ *
+ *   console.log(isRangeError(new RangeError('test'))); // true
+ *   console.log(isRangeError(new Error('test'))); // false
+ * ```
+ *
  **************************************/
 export function isRangeError(
   measuredData: unknown,
@@ -32,6 +56,17 @@ export function isRangeError(
  *
  * 当前数据是否为 ReferenceError
  *
+ * @param measuredData 待测试的数据
+ * @returns {true | false}
+ * @example
+ *
+ * ```ts
+ *   import { isReferenceError } from 'a-type-of-js';
+ *
+ *   console.log(isReferenceError(new ReferenceError('test'))); // true
+ *   console.log(isReferenceError(new Error('test'))); // false
+ *
+ * ```
  **************************************/
 export function isReferenceError(
   measuredData: unknown,
@@ -41,7 +76,19 @@ export function isReferenceError(
 
 /**************************************
  *
- * 当前数据是否为 SyntaxError
+ *
+ * @description 当前数据是否为 SyntaxError
+ * @param measuredData 待测试的数据
+ * @returns {true | false}
+ * @example
+ *
+ * ```ts
+ *   import { isSyntaxError } from 'a-type-of-js';
+ *
+ *   console.log(isSyntaxError(new SyntaxError('test'))); // true
+ *   console.log(isSyntaxError(new Error('test'))); // false
+ *
+ * ```
  *
  **************************************/
 export function isSyntaxError(
@@ -54,6 +101,17 @@ export function isSyntaxError(
  *
  * 当前数据是否为 TypeError
  *
+ * @param measuredData 待测试的数据
+ * @returns {true | false}
+ * @example
+ *
+ * ```ts
+ *   import { isTypeError } from 'a-type-of-js';
+ *
+ *   console.log(isTypeError(new TypeError('test'))); // true
+ *   console.log(isTypeError(new Error('test'))); // false
+ *
+ * ```
  **************************************/
 export function isTypeError(measuredData: unknown): measuredData is TypeError {
   return typeOf(measuredData) === 'typeerror';
@@ -63,6 +121,17 @@ export function isTypeError(measuredData: unknown): measuredData is TypeError {
  *
  * 当前数据是否为 URIError
  *
+ * @param measuredData 待测试的数据
+ * @returns {true | false}
+ * @example
+ *
+ * ```ts
+ *   import { isURIError } from 'a-type-of-js';
+ *
+ *   console.log(isURIError(new URIError('test'))); // true
+ *   console.log(isURIError(new Error('test'))); // false
+ *
+ * ```
  **************************************/
 export function isURIError(measuredData: unknown): measuredData is URIError {
   return typeOf(measuredData) === 'urierror';
@@ -72,6 +141,17 @@ export function isURIError(measuredData: unknown): measuredData is URIError {
  *
  * 当前数据是否为 AggregateError
  *
+ * @param measuredData 待测试的数据
+ * @returns {true | false}
+ * @example
+ *
+ * ```ts
+ *   import { isAggregateError } from 'a-type-of-js';
+ *
+ *   console.log(isAggregateError(new AggregateError([]))); // true
+ *   console.log(isAggregateError(new Error('test'))); // false
+ *
+ * ```
  **************************************/
 export function isAggregateError(
   measuredData: unknown,

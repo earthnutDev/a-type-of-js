@@ -1,11 +1,18 @@
+import { typeOf } from './typeOf';
 /**************************************
  *
  * 当前数据是否为 Intl.Collator
  *
+ * @param measuredData 待测试的数据
+ * @returns boolean
+ * @example
+ *
+ * ```ts
+ * import { isIntlCollator } from 'a-type-of-js';
+ *
+ * console.log(isIntlCollator(new Intl.Collator())); // true
+ * ```
  **************************************/
-
-import { typeOf } from './typeOf';
-
 export function isIntlCollator(
   measuredData: unknown,
 ): measuredData is Intl.Collator {
@@ -16,6 +23,16 @@ export function isIntlCollator(
  *
  * 当前数据是否为 Intl.DateTimeFormat
  *
+ * @param measuredData 待测试的数据
+ * @returns boolean
+ *
+ * @example
+ *
+ * ```ts
+ * import { isIntlDateTimeFormat } from 'a-type-of-js';
+ *
+ * console.log(isIntlDateTimeFormat(new Intl.DateTimeFormat())); // true
+ * ```
  **************************************/
 export function isIntlDateTimeFormat(
   measuredData: unknown,
@@ -27,6 +44,16 @@ export function isIntlDateTimeFormat(
  *
  * 当前数据是否为 Intl.DisplayNames
  *
+ * @param measuredData 待测试的数据
+ * @returns boolean
+ * @example
+ *
+ * ```ts
+ * import { isIntlDisplayNames } from 'a-type-of-js';
+ *
+ * console.log(isIntlDisplayNames(new Intl.DisplayNames())); // true
+ * ```
+ *
  **************************************/
 export function isIntlDisplayNames(
   measuredData: unknown,
@@ -37,6 +64,15 @@ export function isIntlDisplayNames(
  *
  * 当前数据是否为 Intl.DurationFormat
  *
+ * @param measuredData 待测试的数据
+ * @returns boolean
+ * @example
+ *
+ * ```ts
+ * import { isIntlDurationFormat } from 'a-type-of-js';
+ *
+ * ```
+ *
  **************************************/
 // export function isIntlDurationFormat(
 //   measuredData: unknown,
@@ -46,7 +82,15 @@ export function isIntlDisplayNames(
 /**************************************
  *
  * 当前数据是否为 Intl.ListFormat
+ * @param measuredData 待测试的数据
+ * @returns boolean
+ * @example
  *
+ * ```ts
+ * import { isIntlListFormat } from 'a-type-of-js';
+ *
+ * console.log(isIntlListFormat(new Intl.ListFormat())); // true
+ * ```
  **************************************/
 export function isIntlListFormat(
   measuredData: unknown,
@@ -58,6 +102,16 @@ export function isIntlListFormat(
  *
  * 当前数据是否为 Intl.Locale
  *
+ * @param measuredData 待测试的数据
+ * @returns boolean
+ *
+ * @example
+ *
+ * ```ts
+ * import { isIntlLocale } from 'a-type-of-js';
+ *
+ * console.log(isIntlLocale(new Intl.Locale())); // true
+ * ```
  **************************************/
 export function isIntlLocale(
   measuredData: unknown,
@@ -67,6 +121,17 @@ export function isIntlLocale(
 /**************************************
  *
  * 当前数据是否为 Intl.NumberFormat
+ *
+ * @param measuredData 待测试的数据
+ * @returns boolean
+ *
+ * @example
+ *
+ * ```ts
+ * import { isIntlNumberFormat } from 'a-type-of-js';
+ *
+ * console.log(isIntlNumberFormat(new Intl.NumberFormat())); // true
+ * ```
  *
  **************************************/
 export function isIntlNumberFormat(
