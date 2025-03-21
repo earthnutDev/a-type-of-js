@@ -1,53 +1,51 @@
 {
   "name": "a-type-of-js",
   "type": "module",
-  "version": "0.1.1",
-  "main": "cjs/index.cjs",
-  "module": "mjs/index.mjs",
-  "types": "types/index.d.ts",
+  "version": "0.1.3",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/mjs/index.mjs",
+  "types": "dist/types/index.d.ts",
   "author": {
     "name": "earthnut",
     "email": "earthnut.dev@outlook.com",
     "url": "https://earthnut.dev"
   },
-  "description": "here is the project description, please change the content with double underline",
+  "description": "type of function for js/ts",
   "scripts": {
     "b": "rollup --config rollup.config.js && tsc -p tsconfig.types.json",
     "build": "ixxx rm dist && npm run b",
-    "push:version": "bash -c 'git add . && git commit -S -m \"version: $1 $(date +\"%Y-%m-%d %H:%M:%S\")${2:+ }$2\" && git tag -S \"v$1\" -m \"$(date +\"%Y-%m-%d %H:%M:%S\")${2:+ }$2\" && git push origin main --tags' -- ",
+    "push:version": "bash -c 'git add . && git commit  -m \"version: $1 $(date +\"%Y-%m-%d %H:%M:%S\")${2:+ }$2\" && git tag -a \"v$1\" -m \"$(date +\"%Y-%m-%d %H:%M:%S\")${2:+ }$2\" && git push origin main --tags' -- ",
     "push:submit": "bash -c 'git add . && git commit -S -m \"submit: $(date +\"%Y-%m-%d %H:%M:%S\")${1:+ }$1\" && git push origin main' -- ",
     "clean": "npx ixxx up -d r node_modules package-lock.json && npm install && npm run build",
     "diff": "ixxx pkg diff",
     "eslint": "ixxx cls && eslint src",
     "beautify": "npm run prettier",
-    "prettier": "ixxx cls && prettier . --write",
+    "prettier": "ixxx clear && prettier . --write",
     "test": "npx ixxx clear && npx jest --coverage",
     "report": "cat ./coverage/lcov.info | coveralls",
     "coverage": "codecov",
     "versionUpdate": "npx ixxx up -n",
-    "pub": "npm run build && cd dist && npm publish --access public && cd .."
+    "pub": "npm run build && npm publish --access public"
   },
   "files": [
-    "mjs",
-    "cjs",
-    "types"
+    "dist",
+    "CHANGELOG.md",
+    "CHANGELOG-en.md"
   ],
   "exports": {
     ".": {
       "import": {
-        "default": "./mjs/index.mjs",
-        "types": "./types/index.d.ts"
+        "default": "./dist/mjs/index.mjs",
+        "types": "./dist/types/index.d.ts"
       },
       "require": {
-        "default": "./cjs/index.cjs",
-        "types": "./types/index.d.ts"
+        "default": "./dist/cjs/index.cjs",
+        "types": "./dist/types/index.d.ts"
       }
     }
   },
   "keywords": [
-    "a-type-of-js",
-    "type",
-    "js"
+    "a-type-of-js"
   ],
   "license": "ISC",
   "homepage": "https://earthnut.dev/a-type-of-js",
@@ -61,6 +59,7 @@
   },
   "publishConfig": {
     "access": "public",
+    "provenance": true,
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {

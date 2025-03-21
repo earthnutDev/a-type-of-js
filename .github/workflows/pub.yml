@@ -1,0 +1,50 @@
+name: publish to npm
+on:
+  push:
+    branches: [main]
+
+jobs:
+  pub:
+    name: build and  publish to npm
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: write
+      id-token: write
+    if: contains(github.event.head_commit.message, 'version')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      - name: Build package
+        run: |
+          npm run build
+
+      # - name: Set up GPG signing
+      #   env:
+      #     GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+      #     GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      #     GPG_KEY_ID: ${{secrets.GPG_KEY_ID}}
+      #   run: |
+      #     echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+      #     gpg --batch --yes --decrypt --passphrase "${{ secrets.GPG_PASSPHRASE }}" --output signing-key.gpg signing-key.gpg.enc
+      #     gpg --batch --yes --import signing-key.gpg
+      #     git config --global commit.gpgsign true
+      #     git config --global tag.gpgsign true
+      #     git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
+
+      - name: publish to npm with Provenance
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          npm publish --provenance --access public

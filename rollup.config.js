@@ -44,9 +44,9 @@ export default {
     cleanup(),
     copy({
       targets: [
-        { src: 'package.json', dest: 'dist' },
-        { src: 'README.md', dest: 'dist' },
-        { src: 'LICENSE', dest: 'dist' },
+        // { src: 'package.json', dest: 'dist' },
+        // { src: 'README.md', dest: 'dist' },
+        // { src: 'LICENSE', dest: 'dist' },
         // 若是生成 bin 类型的包，可以将下面的代码打开
         // { src: 'bin', dest: 'dist' },
       ],
