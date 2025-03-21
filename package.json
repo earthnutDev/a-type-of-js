@@ -1,7 +1,7 @@
 {
   "name": "a-type-of-js",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "cjs/index.cjs",
   "module": "mjs/index.mjs",
   "types": "types/index.d.ts",
@@ -14,8 +14,8 @@
   "scripts": {
     "b": "rollup --config rollup.config.js && tsc -p tsconfig.types.json",
     "build": "ixxx rm dist && npm run b",
-    "push:version": "bash -c 'git add . && git commit -m \"version: $1 $(date +\"%Y-%m-%d %H:%M:%S\")${2:+ }$2\" && git tag -a \"v$1\" -m \"$(date +\"%Y-%m-%d %H:%M:%S\")${2:+ }$2\" && git push origin main --tags' -- ",
-    "push:submit": "bash -c 'git add . && git commit -m \"submit: $(date +\"%Y-%m-%d %H:%M:%S\")${1:+ }$1\" && git push origin main' -- ",
+    "push:version": "bash -c 'git add . && git commit -S -m \"version: $1 $(date +\"%Y-%m-%d %H:%M:%S\")${2:+ }$2\" && git tag -S \"v$1\" -m \"$(date +\"%Y-%m-%d %H:%M:%S\")${2:+ }$2\" && git push origin main --tags' -- ",
+    "push:submit": "bash -c 'git add . && git commit -S -m \"submit: $(date +\"%Y-%m-%d %H:%M:%S\")${1:+ }$1\" && git push origin main' -- ",
     "clean": "npx ixxx up -d r node_modules package-lock.json && npm install && npm run build",
     "diff": "ixxx pkg diff",
     "eslint": "ixxx cls && eslint src",
