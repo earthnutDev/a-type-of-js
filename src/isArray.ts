@@ -1,12 +1,18 @@
+/**
+ * Type-checking utilities for JavaScript native array types.
+ *
+ * @packageDocumentation
+ * @module @a-type-of-js/array
+ * @license MIT
+ */
 import { typeOf } from './typeOf';
 
-/**************************************
+/**
  *
- * 当前数据是否为数组
+ * Detects whether the current  `input` is an `Array`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `ReferenceError`, narrowing the type to `ReferenceError` in TypeScript.
  * @example
  *
  * ```ts
@@ -16,18 +22,17 @@ import { typeOf } from './typeOf';
  * console.log(isArray({})) // false
  * console.log(isArray(new Set())) // false
  * ```
- **************************************/
-export function isArray(measuredData: unknown): measuredData is Array<unknown> {
-  return Array.isArray(measuredData);
+ */
+export function isArray(input: unknown): input is Array<unknown> {
+  return Array.isArray(input);
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 Set
+ * Detects whether the current  `input` is an `Set`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `ReferenceError`, narrowing the type to `ReferenceError` in TypeScript.
  * @example
  *
  * ```ts
@@ -37,180 +42,184 @@ export function isArray(measuredData: unknown): measuredData is Array<unknown> {
  * console.log(isSet({})) // false
  * console.log(isSet([])) // false
  * ```
- **************************************/
-export function isSet<T = unknown>(
-  measuredData: unknown,
-): measuredData is Set<T> {
-  return typeOf(measuredData) === 'set';
+ */
+export function isSet<T = unknown>(input: unknown): input is Set<T> {
+  return typeOf(input) === 'set';
 }
-/**************************************
+/**
  *
- * 当前数据是否为 WeakSet
+ * Detects whether the current  `input` is an `WeakSet`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `WeakSet`, narrowing the type to `WeakSet` in TypeScript.
  * @example
  *
  * ```ts
  * import  { isWeakSet } from 'a-type-of-js';
  *
  * console.log(isWeakSet(new WeakSet())) // true
+ *
  * console.log(isWeakSet({})) // false
+ * console.log(isWeakSet([])) // false
+ * console.log(isWeakSet(1)) // false
  * ```
- **************************************/
-
+ */
 export function isWeakSet<T extends WeakKey>(
-  measuredData: unknown,
-): measuredData is WeakSet<T> {
-  return typeOf(measuredData) === 'weakset';
+  input: unknown,
+): input is WeakSet<T> {
+  return typeOf(input) === 'weakset';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 Bigint64Array
+ * Detects whether the current  `input` is an `Bigint64Array`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `BigInt64Array`, narrowing the type to `BigInt64Array` in TypeScript.
  * @example
  *
  * ```ts
  * import  { isBigInt64Array } from 'a-type-of-js';
  *
  * console.log(isBigInt64Array(new BigInt64Array())) // true
+ *
  * console.log(isBigInt64Array({})) // false
+ * console.log(isBigInt64Array([])) // false
+ *
  * ```
  *
- **************************************/
+ */
 export function isBigInt64Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(measuredData: unknown): measuredData is BigInt64Array<TArrayBuffer> {
-  return typeOf(measuredData) === 'bigint64array';
+>(input: unknown): input is BigInt64Array<TArrayBuffer> {
+  return typeOf(input) === 'bigint64array';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 BigUint64Array
+ * Detects whether the current  `input` is an `BigUint64Array`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `BigUint64Array`, narrowing the type to `BigUint64Array` in TypeScript.
  * @example
  *
  * ```ts
  * import  { isBigUint64Array } from 'a-type-of-js';
  *
  * console.log(isBigUint64Array(new BigUint64Array())) // true
+ *
  * console.log(isBigUint64Array({})) // false
+ * console.log(isBigUint64Array([])) // false
+ * console.log(isBigUint64Array(1)) // false
  * ```
  *
- **************************************/
+ */
 export function isBigUint64Array<T extends ArrayBufferLike = ArrayBufferLike>(
-  measuredData: unknown,
-): measuredData is BigUint64Array<T> {
-  return typeOf(measuredData) === 'biguint64array';
+  input: unknown,
+): input is BigUint64Array<T> {
+  return typeOf(input) === 'biguint64array';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 ArrayBuffer
+ * Detects whether the current  `input` is an `ArrayBuffer`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `ArrayBuffer`, narrowing the type to `ArrayBuffer` in TypeScript.
  * @example
  *
  * ```ts
  * import  { isArrayBuffer } from 'a-type-of-js';
  *
  * console.log(isArrayBuffer(new ArrayBuffer(8))) // true
+ *
  * console.log(isArrayBuffer({})) // false
  * ```
  *
- **************************************/
-
-export function isArrayBuffer<T extends ArrayBufferLike = ArrayBufferLike>(
-  measuredData: unknown,
-): measuredData is T {
-  return typeOf(measuredData) === 'arraybuffer';
+ */
+export function isArrayBuffer(input: unknown): input is ArrayBuffer {
+  return typeOf(input) === 'arraybuffer';
 }
-
-/**************************************
+/**
  *
- * 当前数据是否为 int8Array
+ * Detects whether the current  `input` is an `int8Array`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Int8Array`, narrowing the type to `Int8Array` in TypeScript.
  * @example
  *
  * ```ts
  * import  { isInt8Array } from 'a-type-of-js';
  *
  * console.log(isInt8Array(new Int8Array())) // true
+ *
  * console.log(isInt8Array({})) // false
+ * console.log(isInt8Array([])) // false
+ * console.log(isInt8Array(1)) // false
  * ```
  *
- **************************************/
+ */
 export function isInt8Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(measuredData: unknown): measuredData is Int8Array<TArrayBuffer> {
-  return typeOf(measuredData) === 'int8array';
+>(input: unknown): input is Int8Array<TArrayBuffer> {
+  return typeOf(input) === 'int8array';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 uint8Array
+ * Detects whether the current  `input` is an `uint8Array`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Uint8Array`, narrowing the type to `Uint8Array` in TypeScript.
  * @example
  *
  * ```ts
  * import  { isUint8Array } from 'a-type-of-js';
  *
  * console.log(isUint8Array(new Uint8Array())) // true
+ *
  * console.log(isUint8Array({})) // false
+ * console.log(isUint8Array([])) // false
+ * console.log(isUint8Array(1)) // false
  * ```
  *
- **************************************/
+ */
 export function isUint8Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(measuredData: unknown): measuredData is Uint8Array<TArrayBuffer> {
-  return typeOf(measuredData) === 'uint8array';
+>(input: unknown): input is Uint8Array<TArrayBuffer> {
+  return typeOf(input) === 'uint8array';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 int16Array
+ * Detects whether the current  `input` is an `int16Array`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Int16Array`, narrowing the type to `Int16Array` in TypeScript.
  * @example
  *
  * ```ts
  * import  { isInt16Array } from 'a-type-of-js';
  *
  * console.log(isInt16Array(new Int16Array())) // true
+ *
  * console.log(isInt16Array({})) // false
+ * console.log(isInt16Array([])) // false
+ * console.log(isInt16Array(1)) // false
  * ```
  *
- **************************************/
+ */
 export function isInt16Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(measuredData: unknown): measuredData is Int16Array<TArrayBuffer> {
-  return typeOf(measuredData) === 'int16array';
+>(input: unknown): input is Int16Array<TArrayBuffer> {
+  return typeOf(input) === 'int16array';
 }
-/**************************************
+/**
  *
- * 当前数据是否为 uint16Array
+ * Detects whether the current  `input` is an `uint16Array`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Uint16Array`, narrowing the type to `Uint16Array` in TypeScript.
  * @example
  *
  * ```ts
@@ -218,125 +227,136 @@ export function isInt16Array<
  * import  { isUint16Array } from 'a-type-of-js';
  *
  * console.log(isUint16Array(new Uint16Array())) // true
+ *
  * console.log(isUint16Array({})) // false
+ * console.log(isUint16Array([])) // false
+ * console.log(isUint16Array(1)) // false
  * ```
  *
- **************************************/
+ */
 export function isUint16Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(measuredData: unknown): measuredData is Uint16Array<TArrayBuffer> {
-  return typeOf(measuredData) === 'uint16array';
+>(input: unknown): input is Uint16Array<TArrayBuffer> {
+  return typeOf(input) === 'uint16array';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 uint32Array
+ * Detects whether the current  `input` is an `uint32Array`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Uint32Array`, narrowing the type to `Uint32Array` in TypeScript.
  * @example
  *
  * ```ts
  * import  { isUint32Array } from 'a-type-of-js';
  *
  * console.log(isUint32Array(new Uint32Array())) // true
+ *
  * console.log(isUint32Array({})) // false
+ * console.log(isUint32Array([])) // false
+ * console.log(isUint32Array(1)) // false
  * ```
  *
- **************************************/
+ */
 export function isUint32Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(measuredData: unknown): measuredData is Uint32Array<TArrayBuffer> {
-  return typeOf(measuredData) === 'uint32array';
+>(input: unknown): input is Uint32Array<TArrayBuffer> {
+  return typeOf(input) === 'uint32array';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 float32Array
+ * Detects whether the current  `input` is an `float32Array`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Float32Array`, narrowing the type to `Float32Array` in TypeScript.
  * @example
  *
  * ```ts
  * import  { isFloat32Array } from 'a-type-of-js';
  *
  * console.log(isFloat32Array(new Float32Array())) // true
+ *
  * console.log(isFloat32Array({})) // false
+ * console.log(isFloat32Array([])) // false
+ * console.log(isFloat32Array(1)) // false
  * ```
- **************************************/
+ */
 export function isFloat32Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(measuredData: unknown): measuredData is Float32Array<TArrayBuffer> {
-  return typeOf(measuredData) === 'float32array';
+>(input: unknown): input is Float32Array<TArrayBuffer> {
+  return typeOf(input) === 'float32array';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 float64Array
+ * Detects whether the current  `input` is an `float64Array`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Float64Array`, narrowing the type to `Float64Array` in TypeScript.
  * @example
  *
  * ```ts
  * import  { isFloat64Array } from 'a-type-of-js';
  *
  * console.log(isFloat64Array(new Float64Array())) // true
+ *
  * console.log(isFloat64Array({})) // false
+ * console.log(isFloat64Array([])) // false
+ * console.log(isFloat64Array(1)) // false
  * ```
- **************************************/
+ */
 export function isFloat64Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(measuredData: unknown): measuredData is Float64Array<TArrayBuffer> {
-  return typeOf(measuredData) === 'float64array';
+>(input: unknown): input is Float64Array<TArrayBuffer> {
+  return typeOf(input) === 'float64array';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 sharedArrayBuffer
+ * Detects whether the current  `input` is an `sharedArrayBuffer`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `SharedArrayBuffer`, narrowing the type to `SharedArrayBuffer` in TypeScript.
  * @example
  *
  * ```ts
  * import  { isSharedArrayBuffer } from 'a-type-of-js';
  *
  * console.log(isSharedArrayBuffer(new SharedArrayBuffer(8))) // true
+ *
  * console.log(isSharedArrayBuffer({})) // false
  *
  * ```
- **************************************/
+ */
 export function isSharedArrayBuffer(
-  measuredData: unknown,
-): measuredData is SharedArrayBuffer {
-  return typeOf(measuredData) === 'sharedarraybuffer';
+  input: unknown,
+): input is SharedArrayBuffer {
+  return typeOf(input) === 'sharedarraybuffer';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 uint8ClampedArray
+ * Detects whether the current  `input` is an `uint8ClampedArray`
  *
- * @param measuredData 待测试的数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Uint8ClampedArray`, narrowing the type to `Uint8ClampedArray` in TypeScript.
  * @example
  *
  * ```ts
  * import  { isUint8ClampedArray } from 'a-type-of-js';
  *
  * console.log(isUint8ClampedArray(new Uint8ClampedArray())) // true
+ *
  * console.log(isUint8ClampedArray({})) // false
+ * console.log(isUint8ClampedArray([])) // false
+ * console.log(isUint8ClampedArray(1)) // false
  * ```
  *
- **************************************/
+ */
 export function isUint8ClampedArray<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(measuredData: unknown): measuredData is Uint8ClampedArray<TArrayBuffer> {
-  return typeOf(measuredData) === 'uint8clampedarray';
+>(input: unknown): input is Uint8ClampedArray<TArrayBuffer> {
+  return typeOf(input) === 'uint8clampedarray';
 }

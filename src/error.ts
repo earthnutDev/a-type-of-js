@@ -1,129 +1,173 @@
+/**
+ * Type-checking utilities for JavaScript native error types.
+ *
+ * @packageDocumentation
+ * @module @a-type-of-js/error
+ * @license MIT
+ */
 import { typeOf } from './typeOf';
 
-/**************************************
+/**
  *
- * 当前数据是否为 Error
+ * Detects whether the current `input` is an `Error`
  *
- * @param measuredData 待测试的数据
- * @returns {true | false}
- * @example
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Error`, narrowing the type to `Error` in TypeScript.
+ * * @example
  *
  * ```ts
  *   import { isError } from 'a-type-of-js';
  *
  *   console.log(isError(new Error('test'))); // true
- *   console.log(isError(new isEvalError('test'))); // false
- *   console.log(isError(new RangeError('test'))); // false
- *   console.log(isError(new ReferenceError('test'))); // false
+ *
+ *   console.log(isError(new EvalError('test'))); // false (specific error types)
+ *   console.log(isError(new RangeError('test'))); // false  (specific error types)
+ *   console.log(isError(new ReferenceError('test'))); // false (specific error types)
+ *
+ *   console.log(isError({ message: 'test' })); // false (not an instance of Error)
  * ```
  *
- **************************************/
-export function isError(measuredData: unknown): measuredData is Error {
-  return typeOf(measuredData) === 'error';
+ *
+ * @since 0.1.4
+ */
+export function isError(input: unknown): input is Error {
+  return typeOf(input) === 'error';
 }
-/**************************************
+/**
  *
- * 当前数据是否为 EvalError
+ * Detects whether the current `input` is an `EvalError`
  *
- **************************************/
-export function isEvalError(measuredData: unknown): measuredData is EvalError {
-  return typeOf(measuredData) === 'evalerror';
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `EvalError`, narrowing the type to `EvalError` in TypeScript.
+ * * @example
+ *
+ * ```ts
+ * import  { isEvalError } from 'a-type-of-js';
+ *
+ * console.log(isEvalError(new EvalError('test'))); // true
+ *
+ * console.log(isEvalError(new Error('test'))); // false (specifically, not an instance of EvalError)
+ * console.log(isEvalError(new TypeError('test'))); // false (specifically, not an instance of EvalError)
+ * console.log(isEvalError(new RangeError('test'))); // false (specifically, not an instance of EvalError)
+ *
+ * console.log(isEvalError({ message: 'test' })); // false (not an instance of EvalError)
+ * ```
+ *
+ */
+export function isEvalError(input: unknown): input is EvalError {
+  return typeOf(input) === 'evalerror';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 RangeError
+ * Detects whether the current `input  is an `RangeError`
  *
- * @param measuredData 待测试的数据
- * @returns {true | false}
- * @example
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `RangeError`, narrowing the type to `RangeError` in TypeScript.
+ * * @example
  *
  * ```ts
  *   import { isRangeError } from 'a-type-of-js';
  *
  *   console.log(isRangeError(new RangeError('test'))); // true
- *   console.log(isRangeError(new Error('test'))); // false
+ *
+ *   console.log(isRangeError(new Error('test'))); // false (not an instance of RangeError
+ *   console.log(isRangeError(new TypeError('test'))); // false (not an instance of RangeError)
+ *   console.log(isRangeError(new SyntaxError('test'))); // false (not an instance of RangeError)
+ *
+ *   console.log(isRangeError('test')); // false (not an instance of RangeError)
  * ```
  *
- **************************************/
-export function isRangeError(
-  measuredData: unknown,
-): measuredData is RangeError {
-  return typeOf(measuredData) === 'rangeerror';
+ */
+export function isRangeError(input: unknown): input is RangeError {
+  return typeOf(input) === 'rangeerror';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 ReferenceError
+ * Detects whether the current  `input` is an `ReferenceError`
  *
- * @param measuredData 待测试的数据
- * @returns {true | false}
- * @example
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `ReferenceError`, narrowing the type to `ReferenceError` in TypeScript.
+ * * @example
  *
  * ```ts
  *   import { isReferenceError } from 'a-type-of-js';
  *
  *   console.log(isReferenceError(new ReferenceError('test'))); // true
- *   console.log(isReferenceError(new Error('test'))); // false
+ *
+ *   console.log(isReferenceError(new Error('test'))); // false (not an instance of ReferenceError)
+ *   console.log(isReferenceError(new TypeError('test'))); // false (not an instance of ReferenceError)
+ *   console.log(isReferenceError(new SyntaxError('test'))); // false (not an instance of ReferenceError)
+ *
+ *   console.log(isReferenceError('test'); // false (not an instance of ReferenceError)
  *
  * ```
- **************************************/
-export function isReferenceError(
-  measuredData: unknown,
-): measuredData is ReferenceError {
-  return typeOf(measuredData) === 'referenceerror';
+ */
+export function isReferenceError(input: unknown): input is ReferenceError {
+  return typeOf(input) === 'referenceerror';
 }
 
-/**************************************
+/**
  *
  *
- * @description 当前数据是否为 SyntaxError
- * @param measuredData 待测试的数据
- * @returns {true | false}
- * @example
+ * Detects whether the current  `input` is an `SyntaxError`
+ *
+ *  @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `SyntaxError`, narrowing the type to `SyntaxError` in TypeScript.
+ * * @example
  *
  * ```ts
  *   import { isSyntaxError } from 'a-type-of-js';
  *
  *   console.log(isSyntaxError(new SyntaxError('test'))); // true
- *   console.log(isSyntaxError(new Error('test'))); // false
+ *
+ *   console.log(isSyntaxError(new Error('test'))); // false (not an instance of SyntaxError)
+ *   console.log(isSyntaxError(new TypeError('test'))); // false (not an instance of SyntaxError)
+ *   console.log(isSyntaxError(new ReferenceError('test'))); // false (not an instance of SyntaxError)
+ *
+ *   console.log(isSyntaxError('test')); // false (not an instance of SyntaxError)
  *
  * ```
  *
- **************************************/
-export function isSyntaxError(
-  measuredData: unknown,
-): measuredData is SyntaxError {
-  return typeOf(measuredData) === 'syntaxerror';
+ */
+export function isSyntaxError(input: unknown): input is SyntaxError {
+  return typeOf(input) === 'syntaxerror';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 TypeError
+ * Detects whether the current  `input` is an `TypeError`
  *
- * @param measuredData 待测试的数据
- * @returns {true | false}
- * @example
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `TypeError`, narrowing the type to `TypeError` in TypeScript.
+ * * @example
  *
  * ```ts
  *   import { isTypeError } from 'a-type-of-js';
  *
  *   console.log(isTypeError(new TypeError('test'))); // true
- *   console.log(isTypeError(new Error('test'))); // false
+ *
+ *   console.log(isTypeError(new Error('test'))); // false (not an instance of TypeError)
+ *   console.log(isTypeError(new SyntaxError('test'))); // false (not an instance of TypeError)
+ *   console.log(isTypeError(new ReferenceError('test'))); // false (not an instance of TypeError)
+ *   console.log(isTypeError(new EvalError('test'))); // false (not an instance of TypeError)
+ *
+ *   console.log(isTypeError('test'); // false (not an instance of TypeError)
  *
  * ```
- **************************************/
-export function isTypeError(measuredData: unknown): measuredData is TypeError {
-  return typeOf(measuredData) === 'typeerror';
+ */
+export function isTypeError(input: unknown): input is TypeError {
+  return typeOf(input) === 'typeerror';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 URIError
+ * Detects whether the current  `input` is an `URIError`
  *
- * @param measuredData 待测试的数据
- * @returns {true | false}
- * @example
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `URIError`, narrowing the type to `URIError` in TypeScript.
+ * * @example
  *
  * ```ts
  *   import { isURIError } from 'a-type-of-js';
@@ -132,18 +176,18 @@ export function isTypeError(measuredData: unknown): measuredData is TypeError {
  *   console.log(isURIError(new Error('test'))); // false
  *
  * ```
- **************************************/
-export function isURIError(measuredData: unknown): measuredData is URIError {
-  return typeOf(measuredData) === 'urierror';
+ */
+export function isURIError(input: unknown): input is URIError {
+  return typeOf(input) === 'urierror';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 AggregateError
+ * Detects whether the current  `input` is an `AggregateError`
  *
- * @param measuredData 待测试的数据
- * @returns {true | false}
- * @example
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `AggregateError`, narrowing the type to `AggregateError` in TypeScript.
+ * * @example
  *
  * ```ts
  *   import { isAggregateError } from 'a-type-of-js';
@@ -152,9 +196,7 @@ export function isURIError(measuredData: unknown): measuredData is URIError {
  *   console.log(isAggregateError(new Error('test'))); // false
  *
  * ```
- **************************************/
-export function isAggregateError(
-  measuredData: unknown,
-): measuredData is AggregateError {
-  return typeOf(measuredData) === 'aggregateerror';
+ */
+export function isAggregateError(input: unknown): input is AggregateError {
+  return typeOf(input) === 'aggregateerror';
 }

@@ -1,141 +1,159 @@
+/**
+ * Type-checking utilities for JavaScript native Intl types.
+ *
+ * @packageDocumentation
+ * @module @a-type-of-js/intl
+ * @license MIT
+ */
 import { typeOf } from './typeOf';
-/**************************************
+/**
  *
- * 当前数据是否为 Intl.Collator
+ * Detects whether the current  `input` is an `Intl.Collator`
  *
- * @param measuredData 待测试的数据
- * @returns boolean
- * @example
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Intl.Collator`, narrowing the type to `Intl.Collator` in TypeScript.
+ * * @example
  *
  * ```ts
  * import { isIntlCollator } from 'a-type-of-js';
  *
  * console.log(isIntlCollator(new Intl.Collator())); // true
+ *
+ * console.log(isIntlCollator(new Intl.DateTimeFormat())); // false
  * ```
- **************************************/
-export function isIntlCollator(
-  measuredData: unknown,
-): measuredData is Intl.Collator {
-  return typeOf(measuredData) === 'intl.collator';
+ */
+export function isIntlCollator(input: unknown): input is Intl.Collator {
+  return typeOf(input) === 'intl.collator';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 Intl.DateTimeFormat
+ * Detects whether the current  `input` is an `Intl.DateTimeFormat`
  *
- * @param measuredData 待测试的数据
- * @returns boolean
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Intl.DateTimeFormat`, narrowing the type to `Intl.DateTimeFormat` in TypeScript.
  *
- * @example
+ * * @example
  *
  * ```ts
  * import { isIntlDateTimeFormat } from 'a-type-of-js';
  *
  * console.log(isIntlDateTimeFormat(new Intl.DateTimeFormat())); // true
+ *
+ * console.log(isIntlDateTimeFormat('hello')); // false
+ * console.log(isIntlDateTimeFormat(1)); // false
+ * console.log(isIntlDateTimeFormat(true)); // false
  * ```
- **************************************/
+ */
 export function isIntlDateTimeFormat(
-  measuredData: unknown,
-): measuredData is Intl.DateTimeFormat {
-  return typeOf(measuredData) === 'intl.datetimeformat';
+  input: unknown,
+): input is Intl.DateTimeFormat {
+  return typeOf(input) === 'intl.datetimeformat';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 Intl.DisplayNames
+ * Detects whether the current  `input` is an `Intl.DisplayNames`
  *
- * @param measuredData 待测试的数据
- * @returns boolean
- * @example
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Intl.DisplayNames`, narrowing the type to `Intl.DisplayNames` in TypeScript.
+ * * @example
  *
  * ```ts
  * import { isIntlDisplayNames } from 'a-type-of-js';
  *
  * console.log(isIntlDisplayNames(new Intl.DisplayNames())); // true
+ *
+ * console.log(isIntlDisplayNames(new Intl.Locale())); // false
  * ```
  *
- **************************************/
-export function isIntlDisplayNames(
-  measuredData: unknown,
-): measuredData is Intl.DisplayNames {
-  return typeOf(measuredData) === 'intl.displaynames';
+ */
+export function isIntlDisplayNames(input: unknown): input is Intl.DisplayNames {
+  return typeOf(input) === 'intl.displaynames';
 }
-/**************************************
+/**
  *
- * 当前数据是否为 Intl.DurationFormat
+ * Detects whether the current  `input` is an `Intl.DurationFormat`
  *
- * @param measuredData 待测试的数据
- * @returns boolean
- * @example
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Intl.DurationFormat`, narrowing the type to `Intl.DurationFormat` in TypeScript.
+ * * @example
  *
  * ```ts
  * import { isIntlDurationFormat } from 'a-type-of-js';
  *
  * ```
  *
- **************************************/
+ */
 // export function isIntlDurationFormat(
-//   measuredData: unknown,
-// ): measuredData is Intl.DurationFormat {
-//   return typeOf(measuredData) === 'intl.durationformat';
+//   input: unknown,
+// ): input is Intl.DurationFormat {
+//   return typeOf(input) === 'intl.durationformat';
 // }
-/**************************************
+/**
  *
- * 当前数据是否为 Intl.ListFormat
- * @param measuredData 待测试的数据
- * @returns boolean
- * @example
+ * Detects whether the current  `input` is an `Intl.ListFormat`
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Intl.ListFormat`, narrowing the type to `Intl.ListFormat` in TypeScript.
+ * * @example
  *
  * ```ts
  * import { isIntlListFormat } from 'a-type-of-js';
  *
  * console.log(isIntlListFormat(new Intl.ListFormat())); // true
+ *
+ * console.log(isIntlListFormat(new Intl.DateTimeFormat())); // false
+ * console.log(isIntlListFormat(1)); // false
+ * console.log(isIntlListFormat('1')); // false
+ * console.log(isIntlListFormat(null)); // false
  * ```
- **************************************/
-export function isIntlListFormat(
-  measuredData: unknown,
-): measuredData is Intl.ListFormat {
-  return typeOf(measuredData) === 'intl.listformat';
+ */
+export function isIntlListFormat(input: unknown): input is Intl.ListFormat {
+  return typeOf(input) === 'intl.listformat';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 Intl.Locale
+ * Detects whether the current  `input` is an `Intl.Locale`
  *
- * @param measuredData 待测试的数据
- * @returns boolean
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Intl.Locale`, narrowing the type to `Intl.Locale` in TypeScript.
  *
- * @example
+ * * @example
  *
  * ```ts
  * import { isIntlLocale } from 'a-type-of-js';
  *
  * console.log(isIntlLocale(new Intl.Locale())); // true
+ *
+ * console.log(isIntlLocale('en')); // false
+ * console.log(isIntlLocale(1)); // false
  * ```
- **************************************/
-export function isIntlLocale(
-  measuredData: unknown,
-): measuredData is Intl.Locale {
-  return typeOf(measuredData) === 'intl.locale';
+ */
+export function isIntlLocale(input: unknown): input is Intl.Locale {
+  return typeOf(input) === 'intl.locale';
 }
-/**************************************
+/**
  *
- * 当前数据是否为 Intl.NumberFormat
+ * Detects whether the current  `input` is an `Intl.NumberFormat`
  *
- * @param measuredData 待测试的数据
- * @returns boolean
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Intl.NumberFormat`, narrowing the type to `Intl.NumberFormat` in TypeScript.
  *
- * @example
+ * * @example
  *
  * ```ts
  * import { isIntlNumberFormat } from 'a-type-of-js';
  *
  * console.log(isIntlNumberFormat(new Intl.NumberFormat())); // true
+ *
+ * console.log(isIntlNumberFormat(123)); // false
+ * console.log(isIntlNumberFormat('123')); // false
+ * console.log(isIntlNumberFormat(new Date())); // false
+ * console.log(isIntlNumberFormat(new Date(0))); // false
  * ```
  *
- **************************************/
-export function isIntlNumberFormat(
-  measuredData: unknown,
-): measuredData is Intl.NumberFormat {
-  return typeOf(measuredData) === 'intl.numberformat';
+ */
+export function isIntlNumberFormat(input: unknown): input is Intl.NumberFormat {
+  return typeOf(input) === 'intl.numberformat';
 }

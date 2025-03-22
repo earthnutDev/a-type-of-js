@@ -1,36 +1,40 @@
+/**
+ * Type-checking utilities for JavaScript native object types.
+ *
+ * @packageDocumentation
+ * @module @a-type-of-js/object
+ * @license MIT
+ */
 import { typeOf } from './typeOf';
 
-/**************************************
+/**
  *
- * 当前数据是否为普通的对象
+ * Detects whether the current  `input` is an `plain object`
  *
- * @param measuredData 任意数据
- * @return {*}  返回一个布尔值
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `object`, narrowing the type to `object` in TypeScript.
  * @example
  *
  * ```ts
  * import { isPlainObject } from 'a-type-of-js';
  *
  * console.log(isPlainObject({})); // true
- * console.log(isPlainObject([])); // false
- * console.log(isPlainObject(new Date())); // false
- * console.log(isPlainObject(new Map())); // false
+ *
+ * console.log(isPlainObject([])); // false ( Array is not an plain object )
+ * console.log(isPlainObject(new Date())); // false ( Date is not an plain object )
+ * console.log(isPlainObject(new Map())); // false ( Map is not an plain object )
  * ```
- **************************************/
-export function isPlainObject<T extends object>(
-  measuredData: unknown,
-): measuredData is T {
-  return typeOf(measuredData) === 'object';
+ */
+export function isPlainObject<T extends object>(input: unknown): input is T {
+  return typeOf(input) === 'object';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为时间
+ * Detects whether the current data is an {@link Date}
  *
- * @param measuredData 任意数据
- * @return {*}  返回一个布尔值
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Date`, narrowing the type to `Date` in TypeScript.
  * @example
  *
  * ```ts
@@ -42,82 +46,83 @@ export function isPlainObject<T extends object>(
  * console.log(isDate(new Date(NaN))); // true
  * console.log(isDate(new Date(undefined))); // true
  * console.log(isDate(new Date(null))); // true
+ *
+ * console.log(isDate(1)); // false ( Number is not a Date )
+ * console.log(isDate('1')); // false ( String is not a Date )
  * ```
  *
  *
- **************************************/
-export function isDate(measuredData: unknown): measuredData is Date {
-  return typeOf(measuredData) === 'date';
+ */
+export function isDate(input: unknown): input is Date {
+  return typeOf(input) === 'date';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 DataView
+ * Detects whether the current  `input` is an `DataView`
  *
- * @param measuredData 任意数据
- * @return {*}  返回一个布尔值
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `DataView`, narrowing the type to `DataView` in TypeScript.
  * @example
  *
  * ```ts
  * import { isDataView } from 'a-type-of-js';
  *
  * console.log(isDataView(new DataView(new ArrayBuffer(8)))); // true
- * console.log(isDataView(new ArrayBuffer(8))); // false
+ *
+ * console.log(isDataView(new ArrayBuffer(8))); // false (ArrayBuffer is not a DataView)
  * ```
- **************************************/
+ */
 export function isDataView<T extends ArrayBufferLike = ArrayBufferLike>(
-  measuredData: unknown,
-): measuredData is DataView<T> {
-  return typeOf(measuredData) === 'dataview';
+  input: unknown,
+): input is DataView<T> {
+  return typeOf(input) === 'dataview';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 Map
+ * Detects whether the current  `input` is an `Map`
  *
- * @param measuredData 任意数据
- * @return {*}  返回一个布尔值
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Map`, narrowing the type to `Map` in TypeScript.
  * @example
  *
  * ```ts
  * import { isMap } from 'a-type-of-js';
  *
  * console.log(isMap(new Map())); // true
- * console.log(isMap(new WeakMap())); // false
- * console.log(isMap(new Set())); // false
- * console.log(isMap(new WeakSet())); // false
- * console.log(isMap(new Array())); // false
+ *
+ * console.log(isMap(new WeakMap())); // false (WeakMap is not a Map)
+ * console.log(isMap(new Set())); // false (Set is not a Map)
+ * console.log(isMap(new WeakSet())); // false (WeakSet is not a Map)
+ * console.log(isMap(new Array())); // false (Array is not a Map)
  * ```
- **************************************/
+ */
 export function isMap<K extends string, V = unknown>(
-  measuredData: unknown,
-): measuredData is Map<K, V> {
-  return typeOf(measuredData) === 'map';
+  input: unknown,
+): input is Map<K, V> {
+  return typeOf(input) === 'map';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 WeakMap
+ * Detects whether the current  `input` is an `WeakMap`
  *
- * @param measuredData 任意数据
- * @return {*}  返回一个布尔值
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `WeakMap`, narrowing the type to `WeakMap` in TypeScript.
  * @example
  *
  * ```ts
  * import { isWeakMap } from 'a-type-of-js';
  *
  * console.log(isWeakMap(new WeakMap())); // true
- * console.log(isWeakMap(new Map())); // false
- * console.log(isWeakMap(new Set())); // false
- * console.log(isWeakMap(new WeakSet())); // false
- * console.log(isWeakMap(new Array())); // false
+ *
+ * console.log(isWeakMap(new Map())); // false (Map is not WeakMap)
+ * console.log(isWeakMap(new Set())); // false (Set is not WeakMap)
+ * console.log(isWeakMap(new WeakSet())); // false (WeakSet is not WeakMap)
+ * console.log(isWeakMap(new Array())); // false (Array is not WeakMap)
  * ```
- **************************************/
-export function isWeakMap(
-  measuredData: unknown,
-): measuredData is WeakMap<object, unknown> {
-  return typeOf(measuredData) === 'weakmap';
+ */
+export function isWeakMap(input: unknown): input is WeakMap<object, unknown> {
+  return typeOf(input) === 'weakmap';
 }

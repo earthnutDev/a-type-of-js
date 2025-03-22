@@ -1,39 +1,44 @@
+/**
+ * Type-checking utilities for JavaScript native function types.
+ *
+ * @packageDocumentation
+ * @module @a-type-of-js/function
+ * @license MIT
+ */
 import { typeOf } from './typeOf';
 
-/**************************************
+/**
  *
- * 当前数据是否为函数
+ * Detects whether the current  `input` is an `function`
  *
- * 函数可能为：
- * - 普通函数
- * - 由 async 标注的异步函数
+ * Function classification:
+ * - Ordinary functions
+ * - An asynchronous function annotated by `async`
+ * - Generator function annotated by `*`
  *
- * @param {*} measuredData 任意数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `function`, narrowing the type to `function` in TypeScript.
  * @example
  *
  * ```ts
  * import { isFunction } from 'a-type-of-js';
  *
  * console.log(isFunction(() => {})); // true
+ *
  * console.log(isFunction(async () => {})); // false
  * console.log(isFunction(function* () {})); // false
  * ```
- **************************************/
-export function isFunction<T extends () => void>(
-  measuredData: unknown,
-): measuredData is T {
-  return 'function' === typeOf(measuredData);
+ */
+export function isFunction<T extends () => void>(input: unknown): input is T {
+  return 'function' === typeOf(input);
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 Promise
+ * Detects whether the current  `input` is an `Promise`
  *
- * @param {*} measuredData 任意数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Promise`, narrowing the type to `Promise` in TypeScript.
  * @example
  *
  * ```ts
@@ -42,19 +47,16 @@ export function isFunction<T extends () => void>(
  * console.log(isPromise(new Promise(() => {}))); // true
  * console.log(isPromise(() => {})); // false
  * ```
- **************************************/
-export function isPromise<T>(
-  measuredData: unknown,
-): measuredData is Promise<T> {
-  return typeOf(measuredData) === 'promise';
+ */
+export function isPromise<T>(input: unknown): input is Promise<T> {
+  return typeOf(input) === 'promise';
 }
-/**************************************
+/**
  *
- * 当前数据是否为 AsyncFunction
+ * Detects whether the current  `input` is an `AsyncFunction`
  *
- * @param {*} measuredData 任意数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `async function`, narrowing the type to `async function` in TypeScript.
  * @example
  *
  * ```ts
@@ -63,20 +65,19 @@ export function isPromise<T>(
  * console.log(isAsyncFunction(async () => {})); // true
  * console.log(isAsyncFunction(() => {})); // false
  * ```
- **************************************/
+ */
 export function isAsyncFunction<T extends () => void>(
-  measuredData: unknown,
-): measuredData is () => Promise<T> {
-  return typeOf(measuredData) === 'asyncfunction';
+  input: unknown,
+): input is () => Promise<T> {
+  return typeOf(input) === 'asyncfunction';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 GeneratorFunction
+ * Detects whether the current  `input` is an `GeneratorFunction`
  *
- * @param measuredData 任意数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `generator function`, narrowing the type to `generator function` in TypeScript.
  * @example
  *
  * ```ts
@@ -86,20 +87,19 @@ export function isAsyncFunction<T extends () => void>(
  * console.log(isGeneratorFunction(() => {})); // false
  * ```
  *
- **************************************/
+ */
 export function isGeneratorFunction(
-  measuredData: unknown,
-): measuredData is GeneratorFunction {
-  return typeOf(measuredData) === 'generatorfunction';
+  input: unknown,
+): input is GeneratorFunction {
+  return typeOf(input) === 'generatorfunction';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 Generator
+ * Detects whether the current  `input` is an `Generator`
  *
- * @param measuredData 任意数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `Generator`, narrowing the type to `Generator` in TypeScript.
  * @example
  *
  * ```ts
@@ -122,7 +122,7 @@ export function isGeneratorFunction(
  * console.log(isGenerator(gen)); // true
  *
  * ```
- **************************************/
-export function isGenerator(measuredData: unknown): measuredData is Generator {
-  return typeOf(measuredData) === 'generator';
+ */
+export function isGenerator(input: unknown): input is Generator {
+  return typeOf(input) === 'generator';
 }

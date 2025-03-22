@@ -1,13 +1,19 @@
+/**
+ * Type-checking utilities for JavaScript.
+ *
+ * @packageDocumentation
+ * @module @a-type-of-js/typeOf
+ * @license MIT
+ */
 import { Typeof } from './types';
 
-/**************************************
+/**
  *
  *
- * 获取数据的类型
+ * The type of detection data
  *
- * @param {*} o 任意数据
- * @return {*}  返回是一个字符串 {@link String}，包含于   @see  {@link TypeOf}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns a string value of type input.
  * @example
  *
  * ```ts
@@ -29,10 +35,10 @@ import { Typeof } from './types';
  *
  * ```
  *
- **************************************/
-export function typeOf(measuredData: unknown): Typeof {
+ */
+export function typeOf(input: unknown): Typeof {
   /**************************
-   * 使用 typeof  判断数据类型
+   * use `typeof` determine the type of data
    **************************/
   const typeofValue:
     | 'string'
@@ -42,8 +48,9 @@ export function typeOf(measuredData: unknown): Typeof {
     | 'symbol'
     | 'undefined'
     | 'object'
-    | 'function' = typeof measuredData;
+    | 'function' = typeof input;
 
+  // Verify the original data type
   // 检验出原始数据类型
   if ('object' !== typeofValue && 'function' !== typeofValue) {
     return typeofValue;
@@ -52,11 +59,7 @@ export function typeOf(measuredData: unknown): Typeof {
   /**************************
    * 通过 Object.prototype.toString.call(o) 判断数据类型
    **************************/
-  const toStringCallValue = Reflect.apply(
-    Object.prototype.toString,
-    measuredData,
-    [],
-  )
+  const toStringCallValue = Reflect.apply(Object.prototype.toString, input, [])
     .replace(/^.*\s(.*)]$/, '$1')
     .toLowerCase();
 
@@ -64,35 +67,35 @@ export function typeOf(measuredData: unknown): Typeof {
     return toStringCallValue as Typeof;
   }
 
-  if (measuredData instanceof SyntaxError) {
+  if (input instanceof SyntaxError) {
     return 'syntaxerror';
   }
 
-  if (measuredData instanceof TypeError) {
+  if (input instanceof TypeError) {
     return 'typeerror';
   }
 
-  if (measuredData instanceof URIError) {
+  if (input instanceof URIError) {
     return 'urierror';
   }
 
-  if (measuredData instanceof ReferenceError) {
+  if (input instanceof ReferenceError) {
     return 'referenceerror';
   }
 
-  // if (measuredData instanceof InternalError) {
+  // if (input instanceof InternalError) {
   //   return 'internalerror';
   // }
 
-  if (measuredData instanceof AggregateError) {
+  if (input instanceof AggregateError) {
     return 'aggregateerror';
   }
 
-  if (measuredData instanceof RangeError) {
+  if (input instanceof RangeError) {
     return 'rangeerror';
   }
 
-  if (measuredData instanceof EvalError) {
+  if (input instanceof EvalError) {
     return 'evalerror';
   }
 

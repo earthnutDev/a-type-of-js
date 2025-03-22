@@ -1,11 +1,17 @@
-/**************************************
+/**
+ * Narrowing the type of `input`
  *
- * 当前一个条件，判断是否为该类型
+ * @packageDocumentation
+ * @module @a-type-of-js/isType
+ * @license MIT
+ */
+
+/**
  *
- * @param {*} measureData 任意数据
- * @param {*} typeOf 判断是否为该类型
- * @return {*}  {measureData is T}
- * @author: [earthnut](https://earthnut.dev)
+ * The current condition determines whether it is of this type
+ *
+ * @param input Arbitrary data
+ * @returns `true` if `input` is an instance of `T`, narrowing the type to `T` in TypeScript.
  * @example
  *
  * ```ts
@@ -14,21 +20,21 @@
  * console.log(isType<number>(1)); // true
  * console.log(isType<string>('1')); // true
  * ```
- **************************************/
-export function isType<T = string>(measureData: unknown): measureData is T;
+ */
+export function isType<T = string>(input: unknown): input is T;
 
 export function isType<T = string>(
-  measureData: unknown,
+  input: unknown,
   judgingConditions: boolean | (() => boolean),
-): measureData is T;
-/**************************************
+): input is T;
+
+/**
  *
- * 当前一个条件，判断是否为该类型
+ * The current condition determines whether it is of this type
  *
- * @param {*} measureData 任意数据
- * @param {*} typeOf 判断是否为该类型
- * @return {*}  {measureData is T}
- * @author: [earthnut](https://earthnut.dev)
+ * @param  input Arbitrary data
+ * @param  judgingConditions Determine whether this type is used
+ * @returns `true` if `input` is an instance of `ReferenceError`, narrowing the type to `ReferenceError` in TypeScript.
  * @example
  *
  * ```ts
@@ -46,12 +52,11 @@ export function isType<T = string>(
  * console.log(isType<number>('1', () => false)); // false
  * ```
  *
- **************************************/
-
+ */
 export function isType<T = string>(
-  measureData: unknown,
+  input: unknown,
   judgingConditions?: boolean | (() => boolean),
-): measureData is T {
+): input is T {
   if (judgingConditions === undefined) return true;
 
   if (typeof judgingConditions === 'function') {

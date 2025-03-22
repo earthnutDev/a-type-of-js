@@ -1,24 +1,29 @@
-/**************************************
+/**
+ * Type-checking utilities for JavaScript native boolean types.
+ *
+ * @packageDocumentation
+ * @module @a-type-of-js/boolean
+ * @license MIT
+ */
+import { typeOf } from './typeOf';
+/**
  *
  * 当前数据类型是否为 boolean
  *
- * @param {*} measuredData 任意数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
- * @example
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `boolean`, narrowing the type to `boolean` in TypeScript.
+ * * @example
  *
  * ```ts
  * import { isBoolean } from 'a-type-of-js';
  *
  * console.log(isBoolean(true)); // true
  * console.log(isBoolean(false)); // true
+ *
  * console.log(isBoolean(1)); // false
  * console.log(isBoolean('true')); // false
  * ```
- **************************************/
-
-import { typeOf } from './typeOf';
-
-export function isBoolean(measuredData: unknown): measuredData is boolean {
-  return typeOf(measuredData) === 'boolean';
+ */
+export function isBoolean(input: unknown): input is boolean {
+  return typeOf(input) === 'boolean';
 }

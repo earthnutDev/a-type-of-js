@@ -1,61 +1,73 @@
+/**
+ * Type-checking utilities for JavaScript native number types.
+ *
+ * @packageDocumentation
+ * @module @a-type-of-js/number
+ * @license MIT
+ */
+
 import { typeOf } from './typeOf';
 
-/**************************************
+/**
  *
- * 当前数据类型是否为 number
+ * Detects whether the current  `input` is an `number`
  *
- * @param {*} measuredData 任意数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `number`, narrowing the type to `number` in TypeScript.
  * @example
  *
  * ```ts
  * import { isNumber } from 'a-type-of-js';
  *
  * isNumber(123); // true
+ *
  * isNumber('123'); // false
+ *
  * ```
- **************************************/
-export function isNumber(measuredData: unknown): measuredData is number {
-  return typeOf(measuredData) === 'number';
+ */
+export function isNumber(input: unknown): input is number {
+  return typeOf(input) === 'number';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 BigInt
+ * Detects whether the current  `input` is an `BigInt`
  *
- * @param {*} measuredData 任意数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `bigint`, narrowing the type to `bigint` in TypeScript.
  * @example
  *
  * ```ts
  * import { isBigInt } from 'a-type-of-js';
  *
  * isBigInt(123n); // true
+ *
  * isBigInt('123'); // false
+ * isBigInt(123); // false
+ * isBigInt(true); // false
  * ```
- **************************************/
-export function isBigInt(measuredData: unknown): measuredData is bigint {
-  return typeOf(measuredData) === 'bigint';
+ */
+export function isBigInt(input: unknown): input is bigint {
+  return typeOf(input) === 'bigint';
 }
 
-/**************************************
+/**
  *
- * 当前数据是否为 NaN
+ * Detects whether the current  `input` is an `NaN`
  *
- * @param {*} measuredData 任意数据
- * @return {*}  {boolean}
- * @author: [earthnut](https://earthnut.dev)
+ * @param input - The value of the type to check.
+ * @returns `true` if `input` is an instance of `NaN`, narrowing the type to `NaN` in TypeScript.
  * @example
  *
  * ```ts
  * import { isNaN } from 'a-type-of-js';
  *
  * isNaN(NaN); // true
+ *
  * isNaN('123'); // false
+ *
  * ```
- **************************************/
-export function isNaN(measuredData: unknown): measuredData is number {
-  return Number.isNaN(measuredData);
+ */
+export function isNaN(input: unknown): input is typeof NaN {
+  return Number.isNaN(input);
 }

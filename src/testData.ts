@@ -1,6 +1,6 @@
 import { Typeof } from './types';
 
-/// 待测试的数据
+/// Arbitrary data
 export const testData: {
   [x in Typeof]: {
     type: Typeof;
@@ -232,9 +232,9 @@ export const testData: {
   },
 };
 
-/**************************************
+/**
  *
  * 测试对象
  *
- **************************************/
+ */
 export const testList = Object.values(testData).map(e => [e.value, e.type]);
