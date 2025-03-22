@@ -29,10 +29,10 @@ jobs:
       - name: Build package
         run: |
           npm run build
-          cd dist
 
       - name: publish to npm with Provenance
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         run: |
+          cd dist
           npm publish --provenance --access public
