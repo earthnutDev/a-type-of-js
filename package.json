@@ -21,12 +21,13 @@
     "diff": "npx ixxx pkg diff",
     "eslint": "npx ixxx cls && eslint src",
     "beautify": "npm run prettier",
-    "prettier": "npx ixxx clear && prettier . --write",
+    "prettier": "npx ixxx cls && prettier . --write",
     "test": "npx ixxx clear && npx jest --coverage",
     "report": "cat ./coverage/lcov.info | coveralls",
     "coverage": "codecov",
     "versionUpdate": "npx ixxx up -n",
-    "pub": "npm run build && cd dist && npm publish --access public && cd .."
+    "pub": "npm run build && cd dist && npm publish --access public && cd ..",
+    "prepare": "husky"
   },
   "files": [
     "cjs",
@@ -63,6 +64,12 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "lint-staged": {
+    "**/*.{js,ts,tsx,jex,md,mdx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
     "@rollup/plugin-commonjs": "^25.0.8",
@@ -79,9 +86,11 @@
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-jsdoc": "^50.6.8",
     "globals": "^15.15.0",
+    "husky": "^9.1.7",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jest-junit": "^16.0.0",
+    "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
     "rollup": "^4.36.0",
     "rollup-plugin-cleanup": "^3.2.1",
