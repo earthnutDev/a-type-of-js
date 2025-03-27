@@ -1,5 +1,5 @@
 /**
- * Type-checking utilities for JavaScript native function types.
+ * 检测 Javascript 数据类型工具之: function
  *
  * @packageDocumentation
  * @module @a-type-of-js/function
@@ -9,15 +9,15 @@ import { typeOf } from './typeOf';
 
 /**
  *
- * Detects whether the current  `input` is an `function`
+ * 检测 `input` 是否是  类型`function`
  *
  * Function classification:
  * - Ordinary functions
  * - An asynchronous function annotated by `async`
  * - Generator function annotated by `*`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `function`, narrowing the type to `function` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `function` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -35,10 +35,10 @@ export function isFunction<T extends () => void>(input: unknown): input is T {
 
 /**
  *
- * Detects whether the current  `input` is an `Promise`
+ * 检测 `input` 是否是  类型`Promise`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Promise`, narrowing the type to `Promise` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Promise` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -53,10 +53,10 @@ export function isPromise<T>(input: unknown): input is Promise<T> {
 }
 /**
  *
- * Detects whether the current  `input` is an `AsyncFunction`
+ * 检测 `input` 是否是  类型`AsyncFunction`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `async function`, narrowing the type to `async function` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `async function` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -74,10 +74,10 @@ export function isAsyncFunction<T extends () => void>(
 
 /**
  *
- * Detects whether the current  `input` is an `GeneratorFunction`
+ * 检测 `input` 是否是  类型`GeneratorFunction`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `generator function`, narrowing the type to `generator function` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `generator function` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -96,10 +96,10 @@ export function isGeneratorFunction(
 
 /**
  *
- * Detects whether the current  `input` is an `Generator`
+ * 检测 `input` 是否是  类型`Generator`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Generator`, narrowing the type to `Generator` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Generator` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts

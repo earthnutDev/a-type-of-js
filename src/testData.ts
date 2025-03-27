@@ -1,6 +1,6 @@
 import { Typeof } from './types';
 
-/// Arbitrary data
+/// 待检测的数据
 export const testData: {
   [x in Typeof]: {
     type: Typeof;

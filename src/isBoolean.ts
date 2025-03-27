@@ -1,5 +1,5 @@
 /**
- * Type-checking utilities for JavaScript native boolean types.
+ * 检测 Javascript 数据类型工具之: boolean
  *
  * @packageDocumentation
  * @module @a-type-of-js/boolean
@@ -10,9 +10,9 @@ import { typeOf } from './typeOf';
  *
  * 当前数据类型是否为 boolean
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `boolean`, narrowing the type to `boolean` in TypeScript.
- * * @example
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `boolean` ，且在 Typescript 中进行类型收缩
+ * @example
  *
  * ```ts
  * import { isBoolean } from 'a-type-of-js';

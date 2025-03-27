@@ -1,5 +1,5 @@
 /**
- * Type-checking utilities for JavaScript native null types.
+ * 检测 Javascript 数据类型工具之: null
  *
  * @packageDocumentation
  * @module @a-type-of-js/null
@@ -8,10 +8,10 @@
 import { typeOf } from './typeOf';
 /**
  *
- * Detects whether the current  `input` is an `null`
+ * 检测 `input` 是否是  类型`null`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `null`, narrowing the type to `null` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `null` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -29,10 +29,10 @@ export function isNull(input: unknown): input is null {
 
 /**
  *
- * Detects whether the current  `input` is an `undefined`
+ * 检测 `input` 是否是  类型`undefined`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `undefined`, narrowing the type to `undefined` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `undefined` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts

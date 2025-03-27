@@ -1,5 +1,5 @@
 /**
- * Type-checking utilities for JavaScript native string types.
+ * 检测 Javascript 数据类型工具之: string
  *
  * @packageDocumentation
  * @module @a-type-of-js/string
@@ -11,8 +11,8 @@ import { typeOf } from './typeOf';
  *
  * 当前数据类型是否为 string
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `string`, narrowing the type to `string` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `string` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -20,9 +20,9 @@ import { typeOf } from './typeOf';
  *
  * console.log(isString('hello')); // true
  *
- * console.log(isString(123)); // false (number is not a string)
- * console.log(isString(true)); // false (boolean is not a string)
- * console.log(isString(null)); // false (null is not a string)
+ * console.log(isString(123)); // false (number 不是 string)
+ * console.log(isString(true)); // false (boolean 不是 string)
+ * console.log(isString(null)); // false (null 不是 string)
  * ```
  */
 export function isString(input: unknown): input is string {
@@ -31,10 +31,10 @@ export function isString(input: unknown): input is string {
 
 /**
  *
- * Detects whether the current  `input` is an `RegExp`
+ * 检测 `input` 是否是  类型`RegExp`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `RegExp`, narrowing the type to `RegExp` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `RegExp` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -43,9 +43,9 @@ export function isString(input: unknown): input is string {
  * console.log(isRegExp(/abc/)); // true
  * console.log(isRegExp(new RegExp('abc'))); // true
  *
- * console.log(isRegExp(123)); // false (number is not a RegExp)
- * console.log(isRegExp('abc')); // false (string is not a RegExp)
- * console.log(isRegExp(null)); // false (null is not a RegExp)
+ * console.log(isRegExp(123)); // false (number 不是 RegExp)
+ * console.log(isRegExp('abc')); // false (string 不是 RegExp)
+ * console.log(isRegExp(null)); // false (null 不是 RegExp)
  * ```
  *
  */

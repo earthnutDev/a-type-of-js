@@ -1,4 +1,4 @@
-/** type value */
+/** 类型值 */
 export type Typeof =
   | 'number'
   | 'function'

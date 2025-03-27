@@ -1,5 +1,5 @@
 /**
- * Narrowing the type of `input`
+ *  `input` 类型收缩
  *
  * @packageDocumentation
  * @module @a-type-of-js/isType
@@ -8,10 +8,10 @@
 
 /**
  *
- * The current condition determines whether it is of this type
+ * 给出一个类型 `T` ，以返回值真假来判断 `input` 是否为 `T` 类型
  *
- * @param input Arbitrary data
- * @returns `true` if `input` is an instance of `T`, narrowing the type to `T` in TypeScript.
+ * @param input 待检测的数据
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `T` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -30,11 +30,11 @@ export function isType<T = string>(
 
 /**
  *
- * The current condition determines whether it is of this type
+ * 给出一个类型 `T` ，以返回值真假来判断 `input` 是否为 `T` 类型
  *
- * @param  input Arbitrary data
+ * @param  input 待检测的数据
  * @param  judgingConditions Determine whether this type is used
- * @returns `true` if `input` is an instance of `ReferenceError`, narrowing the type to `ReferenceError` in TypeScript.
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `ReferenceError` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts

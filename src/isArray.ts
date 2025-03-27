@@ -1,5 +1,5 @@
 /**
- * Type-checking utilities for JavaScript native array types.
+ * 检测 Javascript 数据类型工具之: array
  *
  * @packageDocumentation
  * @module @a-type-of-js/array
@@ -9,10 +9,10 @@ import { typeOf } from './typeOf';
 
 /**
  *
- * Detects whether the current  `input` is an `Array`
+ * 检测 `input` 是否是  类型`Array`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `ReferenceError`, narrowing the type to `ReferenceError` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `ReferenceError` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -29,10 +29,10 @@ export function isArray(input: unknown): input is Array<unknown> {
 
 /**
  *
- * Detects whether the current  `input` is an `Set`
+ * 检测 `input` 是否是  类型`Set`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `ReferenceError`, narrowing the type to `ReferenceError` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `ReferenceError` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -48,10 +48,10 @@ export function isSet<T = unknown>(input: unknown): input is Set<T> {
 }
 /**
  *
- * Detects whether the current  `input` is an `WeakSet`
+ * 检测 `input` 是否是  类型`WeakSet`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `WeakSet`, narrowing the type to `WeakSet` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `WeakSet` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -72,10 +72,10 @@ export function isWeakSet<T extends WeakKey>(
 
 /**
  *
- * Detects whether the current  `input` is an `Bigint64Array`
+ * 检测 `input` 是否是  类型`Bigint64Array`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `BigInt64Array`, narrowing the type to `BigInt64Array` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `BigInt64Array` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -97,10 +97,10 @@ export function isBigInt64Array<
 
 /**
  *
- * Detects whether the current  `input` is an `BigUint64Array`
+ * 检测 `input` 是否是  类型`BigUint64Array`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `BigUint64Array`, narrowing the type to `BigUint64Array` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `BigUint64Array` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -122,10 +122,10 @@ export function isBigUint64Array<T extends ArrayBufferLike = ArrayBufferLike>(
 
 /**
  *
- * Detects whether the current  `input` is an `ArrayBuffer`
+ * 检测 `input` 是否是  类型`ArrayBuffer`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `ArrayBuffer`, narrowing the type to `ArrayBuffer` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `ArrayBuffer` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -142,10 +142,10 @@ export function isArrayBuffer(input: unknown): input is ArrayBuffer {
 }
 /**
  *
- * Detects whether the current  `input` is an `int8Array`
+ * 检测 `input` 是否是  类型`int8Array`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Int8Array`, narrowing the type to `Int8Array` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Int8Array` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -167,10 +167,10 @@ export function isInt8Array<
 
 /**
  *
- * Detects whether the current  `input` is an `uint8Array`
+ * 检测 `input` 是否是  类型`uint8Array`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Uint8Array`, narrowing the type to `Uint8Array` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Uint8Array` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -192,10 +192,10 @@ export function isUint8Array<
 
 /**
  *
- * Detects whether the current  `input` is an `int16Array`
+ * 检测 `input` 是否是  类型`int16Array`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Int16Array`, narrowing the type to `Int16Array` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Int16Array` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -216,10 +216,10 @@ export function isInt16Array<
 }
 /**
  *
- * Detects whether the current  `input` is an `uint16Array`
+ * 检测 `input` 是否是  类型`uint16Array`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Uint16Array`, narrowing the type to `Uint16Array` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Uint16Array` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -242,10 +242,10 @@ export function isUint16Array<
 
 /**
  *
- * Detects whether the current  `input` is an `uint32Array`
+ * 检测 `input` 是否是  类型`uint32Array`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Uint32Array`, narrowing the type to `Uint32Array` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Uint32Array` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -267,10 +267,10 @@ export function isUint32Array<
 
 /**
  *
- * Detects whether the current  `input` is an `float32Array`
+ * 检测 `input` 是否是  类型`float32Array`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Float32Array`, narrowing the type to `Float32Array` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Float32Array` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -291,10 +291,10 @@ export function isFloat32Array<
 
 /**
  *
- * Detects whether the current  `input` is an `float64Array`
+ * 检测 `input` 是否是  类型`float64Array`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Float64Array`, narrowing the type to `Float64Array` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Float64Array` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -315,10 +315,10 @@ export function isFloat64Array<
 
 /**
  *
- * Detects whether the current  `input` is an `sharedArrayBuffer`
+ * 检测 `input` 是否是  类型`sharedArrayBuffer`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `SharedArrayBuffer`, narrowing the type to `SharedArrayBuffer` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `SharedArrayBuffer` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -338,10 +338,10 @@ export function isSharedArrayBuffer(
 
 /**
  *
- * Detects whether the current  `input` is an `uint8ClampedArray`
+ * 检测 `input` 是否是  类型`uint8ClampedArray`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Uint8ClampedArray`, narrowing the type to `Uint8ClampedArray` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Uint8ClampedArray` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts

@@ -1,16 +1,16 @@
 # a-type-of-js
 
-[![version](<https://img.shields.io/npm/v/a-type-of-js.svg?logo=npm&logoColor=rgb(0,0,0)&label=version&labelColor=rgb(73,73,228)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![NPM Last Update](<https://img.shields.io/npm/last-update/a-type-of-js?logo=npm&labelColor=rgb(255,36,63)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![📦 size](<https://img.shields.io/bundlephobia/minzip/a-type-of-js.svg?logo=npm&labelColor=rgb(201,158,140)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![downloads](<https://img.shields.io/npm/dm/a-type-of-js.svg?logo=npm&logoColor=rgb(0,0,0)&labelColor=rgb(194,112,210)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![downloads](<https://img.shields.io/npm/dt/a-type-of-js.svg?logo=npm&labelColor=rgb(107,187,124)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js)
+[![version](<https://img.shields.io/npm/v/a-type-of-js.svg?logo=npm&logoColor=rgb(0,0,0)&label=版本号&labelColor=rgb(73,73,228)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![NPM Last Update](<https://img.shields.io/npm/last-update/a-type-of-js?logo=npm&label=版本最后更新&labelColor=rgb(255,36,63)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![📦 size](<https://img.shields.io/bundlephobia/minzip/a-type-of-js.svg?logo=npm&label=压缩包大小&labelColor=rgb(201,158,140)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![downloads](<https://img.shields.io/npm/dm/a-type-of-js.svg?logo=npm&logoColor=rgb(0,0,0)&label=月下载量&labelColor=rgb(194,112,210)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![downloads](<https://img.shields.io/npm/dt/a-type-of-js.svg?logo=npm&label=总下载量&labelColor=rgb(107,187,124)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js)
 
-[![last commit](<https://img.shields.io/github/last-commit/earthnutDev/a-type-of-js.svg?logo=github&logoColor=rgb(0,0,0)&labelColor=rgb(255,165,0)&color=rgb(0,0,0)>)](https://github.com/earthnutDev/a-type-of-js) [![GitHub commit activity](<https://img.shields.io/github/commit-activity/y/earthnutDev/a-type-of-js.svg?logo=github&labelColor=rgb(128,0,128)&color=rgb(0,0,0)>)](https://github.com/earthnutDev/a-type-of-js) [![Coverage Status](<https://img.shields.io/coverallsCoverage/github/earthnutDev/a-type-of-js?logo=coveralls&label=coveralls&labelColor=rgb(12, 244, 39)&color=rgb(0,0,0)>)](https://coveralls.io/github/earthnutDev/a-type-of-js?branch=main) [![codecov](<https://img.shields.io/codecov/c/github/earthnutDev/a-type-of-js/main?logo=codecov&label=codecov&labelColor=rgb(7, 245, 245)&color=rgb(0,0,0)>)](https://codecov.io/gh/earthnutDev/a-type-of-js)
+[![last commit](<https://img.shields.io/github/last-commit/earthnutDev/a-type-of-js.svg?logo=github&logoColor=rgb(0,0,0)&label=最后推码&labelColor=rgb(255,165,0)&color=rgb(0,0,0)>)](https://github.com/earthnutDev/a-type-of-js) [![GitHub commit activity](<https://img.shields.io/github/commit-activity/y/earthnutDev/a-type-of-js.svg?logo=github&label=推码数&labelColor=rgb(128,0,128)&color=rgb(0,0,0)>)](https://github.com/earthnutDev/a-type-of-js) [![Coverage Status](<https://img.shields.io/coverallsCoverage/github/earthnutDev/a-type-of-js?logo=coveralls&label=coveralls&labelColor=rgb(12, 244, 39)&color=rgb(0,0,0)>)](https://coveralls.io/github/earthnutDev/a-type-of-js?branch=main) [![codecov](<https://img.shields.io/codecov/c/github/earthnutDev/a-type-of-js/main?logo=codecov&label=codecov&labelColor=rgb(7, 245, 245)&color=rgb(0,0,0)>)](https://codecov.io/gh/earthnutDev/a-type-of-js)
 
-[![🇨🇳 中文](<https://img.shields.io/badge/🇨🇳-中_%20_文-rgb(0,0,0)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/README-zh.md) ![🌍 English](<https://img.shields.io/badge/🌍-English-rgb(0,0,0)?style=social>) [![👀 change log](<https://img.shields.io/badge/👀-change_%20_log-rgb(0,125,206)?logo=github>)](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG-en.md) [![submit 🙋‍♂️ issue](<https://img.shields.io/badge/☣️-submit_%20_issue-rgb(255,0,63)?logo=github>)](https://github.com/earthnutDev/a-type-of-js/issues)
+[![查看 📔 日志](<https://img.shields.io/badge/👀-日_%20_志-rgb(0,125,206)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG.md) [![bug 🙋‍♂️ 提交](<https://img.shields.io/badge/☣️-bug_%20_提交-rgb(255,0,63)>)](https://github.com/earthnutDev/a-type-of-js/issues)
 
 ---
 
-A simple type determination tool
+一个简单的类型判断工具
 
-## use
+## 使用
 
 ```ts
 import { typeOf } from 'a-type-of-js';
@@ -24,7 +24,7 @@ if (typeOf(num) === 'number') {
 }
 ```
 
-### Use the is type judgment in 'ts' for type-safe contraction
+### 使用 `ts` 中的 is 类型判断来进行类型安全收缩
 
 ```ts
 import { isString, isNumber } from 'a-type-of-js';
@@ -41,9 +41,9 @@ doSomething('hello'); // HELLO
 doSomething(1); // 1.00
 ```
 
-### not `as`
+### 向 `as` 说 'no'
 
-Use functions instead of as, which in China is called taking off your pants and farting. A better analogy might be suspenders with no pants.
+en，且当是脱裤子放屁吧
 
 ```ts
 import { isType } from 'a-type-of-js';
@@ -77,33 +77,33 @@ function doSomething(value: string | number | boolean | ) {
 }
 ```
 
-### Documents provide type detection
+### 文档提供类型检测
 
-- `isString` strings, `String` objects
-- `isNumber` number, `Number` object
-- `isBoolean` boolean, `Boolean` object constructed
+- `isString` 字符串、`String` 对象构建的字符串
+- `isNumber` 数字、`Number` 对象构建的数字
+- `isBoolean` 布尔值、`Boolean` 对象构建的布尔值
 - `isNull` null
 - `isUndefined` undefined
-- `isNaN` `NaN` (`NaN` is a special value `NaN !== NaN` even if `typeof NaN` returns `number`)
-- `isFunction` function
-- `isArray` array, `Array` object
+- `isNaN` `NaN`（`NaN` 是一个特殊的数值 `NaN !== NaN` 即便 `typeof NaN` 返回的是 `number`）
+- `isFunction` 函数
+- `isArray` 数组、`Array` 对象构建的数组
 - `isSymbol` symbol
-- `isBigInt` is a large integer
-- `isPlainObject` object (normal object, not other built-in object types)
+- `isBigInt` 大整数
+- `isPlainObject` 对象（普通对象，非其他内置对象类型）
 - `isPromise` Promise
-- `isAsyncFunction` is an asynchronous function
-- `isDate` time
+- `isAsyncFunction` 异步函数
+- `isDate` 时间
 - `isMap` Map
 - `isSet` Set
 - `isWeakMap` WeakMap
 - `isWeakSet` WeakSet
-- `isGenerator` generator
-- `isGeneratorFunction` generator function
+- `isGenerator` 生成器
+- `isGeneratorFunction` 生成器函数
 - `isBigInt64Array` BigInt64Array
 - `isBigUint64Array` BigUint64Array
 - `isDataView` DataView
 - `isArrayBuffer` ArrayBuffer
-- `isRegExp` regex, `RegExp` object-built regex
+- `isRegExp` 正则、`RegExp` 对象构建的正则
 - `isSharedArrayBuffer` SharedArrayBuffer
 - `isUint8ClampedArray` Uint8ClampedArray
 - `isInt8Array` Int8Array
@@ -121,15 +121,15 @@ function doSomething(value: string | number | boolean | ) {
 - `isIntlListFormat` Intl.ListFormat
 - `isIntlLocale` Intl.Locale
 - `isIntlNumberFormat` Intl.NumberFormat
-- `isError` error
-- `isEvalError` eval error
-- `isRangeError` range error
-- `isReferenceError` reference error
-- `isSyntaxError` syntax error
-- `isTypeError` type error
-- `isURIError` uri error
-- `isAggregateError` aggregate error
+- `isError` 错误
+- `isEvalError` eval 错误
+- `isRangeError` range 错误
+- `isReferenceError` reference 错误
+- `isSyntaxError` syntax 错误
+- `isTypeError` type 错误
+- `isURIError` uri 错误
+- `isAggregateError` aggregate 错误
 
-## Documentation
+## 文档地址
 
-see [https://earthnut.dev/a-type-of-js/](https://earthnut.dev/a-type-of-js/)
+参看 [https://earthnut.dev/a-type-of-js/](https://earthnut.dev/a-type-of-js/)

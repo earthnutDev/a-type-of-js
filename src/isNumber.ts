@@ -1,5 +1,5 @@
 /**
- * Type-checking utilities for JavaScript native number types.
+ * 检测 Javascript 数据类型工具之: number
  *
  * @packageDocumentation
  * @module @a-type-of-js/number
@@ -10,10 +10,10 @@ import { typeOf } from './typeOf';
 
 /**
  *
- * Detects whether the current  `input` is an `number`
+ * 检测 `input` 是否是  类型`number`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `number`, narrowing the type to `number` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `number` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -31,10 +31,10 @@ export function isNumber(input: unknown): input is number {
 
 /**
  *
- * Detects whether the current  `input` is an `BigInt`
+ * 检测 `input` 是否是  类型`BigInt`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `bigint`, narrowing the type to `bigint` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `bigint` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts
@@ -53,10 +53,10 @@ export function isBigInt(input: unknown): input is bigint {
 
 /**
  *
- * Detects whether the current  `input` is an `NaN`
+ * 检测 `input` 是否是  类型`NaN`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `NaN`, narrowing the type to `NaN` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `NaN` ，且在 Typescript 中进行类型收缩
  * @example
  *
  * ```ts

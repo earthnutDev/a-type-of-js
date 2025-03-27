@@ -1,5 +1,5 @@
 /**
- * Type-checking utilities for JavaScript native Intl types.
+ * 检测 Javascript 数据类型工具之: Intl
  *
  * @packageDocumentation
  * @module @a-type-of-js/intl
@@ -8,11 +8,11 @@
 import { typeOf } from './typeOf';
 /**
  *
- * Detects whether the current  `input` is an `Intl.Collator`
+ * 检测 `input` 是否是  类型`Intl.Collator`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Intl.Collator`, narrowing the type to `Intl.Collator` in TypeScript.
- * * @example
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.Collator` ，且在 Typescript 中进行类型收缩
+ * @example
  *
  * ```ts
  * import { isIntlCollator } from 'a-type-of-js';
@@ -28,12 +28,12 @@ export function isIntlCollator(input: unknown): input is Intl.Collator {
 
 /**
  *
- * Detects whether the current  `input` is an `Intl.DateTimeFormat`
+ * 检测 `input` 是否是  类型`Intl.DateTimeFormat`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Intl.DateTimeFormat`, narrowing the type to `Intl.DateTimeFormat` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.DateTimeFormat` ，且在 Typescript 中进行类型收缩
  *
- * * @example
+ * @example
  *
  * ```ts
  * import { isIntlDateTimeFormat } from 'a-type-of-js';
@@ -53,11 +53,11 @@ export function isIntlDateTimeFormat(
 
 /**
  *
- * Detects whether the current  `input` is an `Intl.DisplayNames`
+ * 检测 `input` 是否是  类型`Intl.DisplayNames`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Intl.DisplayNames`, narrowing the type to `Intl.DisplayNames` in TypeScript.
- * * @example
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.DisplayNames` ，且在 Typescript 中进行类型收缩
+ * @example
  *
  * ```ts
  * import { isIntlDisplayNames } from 'a-type-of-js';
@@ -73,11 +73,11 @@ export function isIntlDisplayNames(input: unknown): input is Intl.DisplayNames {
 }
 /**
  *
- * Detects whether the current  `input` is an `Intl.DurationFormat`
+ * 检测 `input` 是否是  类型`Intl.DurationFormat`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Intl.DurationFormat`, narrowing the type to `Intl.DurationFormat` in TypeScript.
- * * @example
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.DurationFormat` ，且在 Typescript 中进行类型收缩
+ * @example
  *
  * ```ts
  * import { isIntlDurationFormat } from 'a-type-of-js';
@@ -92,10 +92,10 @@ export function isIntlDisplayNames(input: unknown): input is Intl.DisplayNames {
 // }
 /**
  *
- * Detects whether the current  `input` is an `Intl.ListFormat`
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Intl.ListFormat`, narrowing the type to `Intl.ListFormat` in TypeScript.
- * * @example
+ * 检测 `input` 是否是  类型`Intl.ListFormat`
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.ListFormat` ，且在 Typescript 中进行类型收缩
+ * @example
  *
  * ```ts
  * import { isIntlListFormat } from 'a-type-of-js';
@@ -114,12 +114,12 @@ export function isIntlListFormat(input: unknown): input is Intl.ListFormat {
 
 /**
  *
- * Detects whether the current  `input` is an `Intl.Locale`
+ * 检测 `input` 是否是  类型`Intl.Locale`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Intl.Locale`, narrowing the type to `Intl.Locale` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.Locale` ，且在 Typescript 中进行类型收缩
  *
- * * @example
+ * @example
  *
  * ```ts
  * import { isIntlLocale } from 'a-type-of-js';
@@ -135,12 +135,12 @@ export function isIntlLocale(input: unknown): input is Intl.Locale {
 }
 /**
  *
- * Detects whether the current  `input` is an `Intl.NumberFormat`
+ * 检测 `input` 是否是  类型`Intl.NumberFormat`
  *
- * @param input - The value of the type to check.
- * @returns `true` if `input` is an instance of `Intl.NumberFormat`, narrowing the type to `Intl.NumberFormat` in TypeScript.
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.NumberFormat` ，且在 Typescript 中进行类型收缩
  *
- * * @example
+ * @example
  *
  * ```ts
  * import { isIntlNumberFormat } from 'a-type-of-js';

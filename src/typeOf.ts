@@ -1,5 +1,5 @@
 /**
- * Type-checking utilities for JavaScript.
+ * 检测 Javascript 数据类型工具
  *
  * @packageDocumentation
  * @module @a-type-of-js/typeOf
@@ -10,10 +10,10 @@ import { Typeof } from './types';
 /**
  *
  *
- * The type of detection data
+ *  数据类型检测
  *
- * @param input - The value of the type to check.
- * @returns a string value of type input.
+ * @param input - 待检测的数据，任意类型
+ * @returns 检测数据类型的字符串表示（小写字母）
  * @example
  *
  * ```ts
@@ -38,7 +38,7 @@ import { Typeof } from './types';
  */
 export function typeOf(input: unknown): Typeof {
   /**************************
-   * use `typeof` determine the type of data
+   * 使用 typeof 判断数据类型
    **************************/
   const typeofValue:
     | 'string'
@@ -50,7 +50,6 @@ export function typeOf(input: unknown): Typeof {
     | 'object'
     | 'function' = typeof input;
 
-  // Verify the original data type
   // 检验出原始数据类型
   if ('object' !== typeofValue && 'function' !== typeofValue) {
     return typeofValue;
