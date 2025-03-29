@@ -16,8 +16,8 @@
     "b": "rollup --config rollup.config.js && tsc -p tsconfig.types.json",
     "clean:package": "node scripts/clean-package-json.js",
     "build": "npx ixxx rm dist && npm run b && npm run clean:package",
-    "push:version": "bash -c 'git add . && git commit -m \"version: $1 $(date +\"%Y-%m-%d %H:%M:%S\")${2:+ }$2\" && git tag -a \"v$1\" -m \"$(date +\"%Y-%m-%d %H:%M:%S\")${2:+ }$2\" && git push origin main --tags' -- ",
-    "push:submit": "bash -c 'git add . && git commit -m \"submit: $(date +\"%Y-%m-%d %H:%M:%S\")${1:+ }$1\" && git push origin main' -- ",
+    "push:version": "gvv",
+    "push:submit": "gvv",
     "clean": "npx ixxx up -d r node_modules package-lock.json && npm install && npm run build",
     "diff": "npx ixxx pkg diff",
     "eslint": "npx ixxx cls && eslint src",
@@ -26,8 +26,8 @@
     "test": "npx ixxx clear && npx jest --coverage",
     "report": "cat ./coverage/lcov.info | coveralls",
     "coverage": "codecov",
-    "vsu": "npx vsu",
-    "prepublishOnly": "bvn",
+    "vjj": "vjj",
+    "prepublishOnly": "pjj",
     "prepare": "husky"
   },
   "files": [
@@ -103,5 +103,8 @@
     "tslib": "^2.8.1",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.27.0"
+  },
+  "dependencies": {
+    "pjj": "^0.1.0"
   }
 }
