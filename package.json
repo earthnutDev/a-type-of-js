@@ -2,7 +2,7 @@
   "name": "a-type-of-js",
   "type": "module",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.2.1-test.0",
   "main": "cjs/index.cjs",
   "module": "mjs/index.mjs",
   "types": "types/index.d.ts",
