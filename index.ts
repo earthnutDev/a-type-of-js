@@ -2,7 +2,12 @@ export { typeOf } from './src/typeOf';
 
 export type { Typeof } from './src/types';
 
-export { isString, isRegExp } from './src/isString';
+export {
+  isString,
+  isRegExp,
+  isEmptyString,
+  isBusinessEmptyString,
+} from './src/isString';
 
 export { isNumber, isNaN, isBigInt } from './src/isNumber';
 

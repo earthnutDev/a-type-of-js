@@ -1,12 +1,6 @@
 # a-type-of-js
 
-[![version](<https://img.shields.io/npm/v/a-type-of-js.svg?logo=npm&logoColor=rgb(0,0,0)&label=版本号&labelColor=rgb(73,73,228)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![NPM Last Update](<https://img.shields.io/npm/last-update/a-type-of-js?logo=npm&label=版本最后更新&labelColor=rgb(255,36,63)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![📦 size](<https://img.shields.io/bundlephobia/minzip/a-type-of-js.svg?logo=npm&label=压缩包大小&labelColor=rgb(201,158,140)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![downloads](<https://img.shields.io/npm/dm/a-type-of-js.svg?logo=npm&logoColor=rgb(0,0,0)&label=月下载量&labelColor=rgb(194,112,210)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![downloads](<https://img.shields.io/npm/dt/a-type-of-js.svg?logo=npm&label=总下载量&labelColor=rgb(107,187,124)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js)
-
-[![last commit](<https://img.shields.io/github/last-commit/earthnutDev/a-type-of-js.svg?logo=github&logoColor=rgb(0,0,0)&label=最后推码&labelColor=rgb(255,165,0)&color=rgb(0,0,0)>)](https://github.com/earthnutDev/a-type-of-js) [![GitHub commit activity](<https://img.shields.io/github/commit-activity/y/earthnutDev/a-type-of-js.svg?logo=github&label=推码数&labelColor=rgb(128,0,128)&color=rgb(0,0,0)>)](https://github.com/earthnutDev/a-type-of-js) [![Coverage Status](<https://img.shields.io/coverallsCoverage/github/earthnutDev/a-type-of-js?logo=coveralls&label=coveralls&labelColor=rgb(12, 244, 39)&color=rgb(0,0,0)>)](https://coveralls.io/github/earthnutDev/a-type-of-js?branch=main) [![codecov](<https://img.shields.io/codecov/c/github/earthnutDev/a-type-of-js/main?logo=codecov&label=codecov&labelColor=rgb(7, 245, 245)&color=rgb(0,0,0)>)](https://codecov.io/gh/earthnutDev/a-type-of-js)
-
-[![查看 📔 日志](<https://img.shields.io/badge/👀-日_%20_志-rgb(0,125,206)>)](https://github.com/earthnutDev/a-type-of-js/blob/main/CHANGELOG.md) [![bug 🙋‍♂️ 提交](<https://img.shields.io/badge/☣️-bug_%20_提交-rgb(255,0,63)>)](https://github.com/earthnutDev/a-type-of-js/issues)
-
----
+[![version](<https://img.shields.io/npm/v/a-type-of-js.svg?logo=npm&logoColor=rgb(0,0,0)&label=版本号&labelColor=rgb(73,73,228)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![Coverage Status](<https://img.shields.io/coverallsCoverage/github/earthnutDev/a-type-of-js?logo=coveralls&label=coveralls&labelColor=rgb(12, 244, 39)&color=rgb(0,0,0)>)](https://coveralls.io/github/earthnutDev/a-type-of-js?branch=main) [![codecov](<https://img.shields.io/codecov/c/github/earthnutDev/a-type-of-js/main?logo=codecov&label=codecov&labelColor=rgb(7, 245, 245)&color=rgb(0,0,0)>)](https://codecov.io/gh/earthnutDev/a-type-of-js) [![bug 🙋‍♂️ 提交](<https://img.shields.io/badge/☣️-bug_%20_提交-rgb(255,0,63)>)](https://github.com/earthnutDev/a-type-of-js/issues)
 
 一个简单的类型判断工具
 
@@ -87,6 +81,8 @@ function doSomething(value: string | number | boolean | ) {
 - `isNaN` `NaN`（`NaN` 是一个特殊的数值 `NaN !== NaN` 即便 `typeof NaN` 返回的是 `number`）
 - `isFunction` 函数
 - `isArray` 数组、`Array` 对象构建的数组
+- `isEmptyString` 空字符串
+- `isBusinessEmptyString` 空字符串（去除首尾空格）
 - `isSymbol` symbol
 - `isBigInt` 大整数
 - `isPlainObject` 对象（普通对象，非其他内置对象类型）

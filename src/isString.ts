@@ -52,3 +52,65 @@ export function isString(input: unknown): input is string {
 export function isRegExp(input: unknown): input is RegExp {
   return typeOf(input) === 'regexp';
 }
+
+/**
+ *
+ * 检测 `input` 是否是（绝对）空字符串
+ *
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `string` 且为 空字符串，且在 Typescript 中进行类型收缩
+ *
+ * @example
+ *
+ * ```ts
+ * import { isEmptyString } from 'a-type-of-js';
+ *
+ * console.log(isEmptyString('')); // true
+ * const.log(isEmptyString(new String())); // true
+ * const.log(isEmptyString(new String(''))); // true
+ *
+ *
+ * // 以下情况返回 false
+ * console.log(isEmptyString(' ')); // false
+ * console.log(isEmptyString('abc')); // false
+ * console.log(isEmptyString(123)); // false (number 不是 string)
+ * console.log(isEmptyString(true)); // false (boolean 不是 string)
+ * console.log(isEmptyString(null)); // false (null 不是 string)
+ * ```
+ *
+ */
+export function isEmptyString(input: unknown): input is '' {
+  return isString(input) && input.valueOf() === '';
+}
+
+/**
+ *
+ * 检测 `input` 是否是（业务）空字符串
+ *
+ * 业务空字符串：指字符串开头和结尾的空格，以及中间连续的空格，都算作空字符串
+ *
+ * @param input - 待检测的数据，任意类型
+ * @returns 返回 `true` 则说明该数据 `input` 类型为 `string` 且为 业务空字符串，且在 Typescript 中进行类型收缩
+ * @example
+ *
+ * ```ts
+ * import { isBusinessEmptyString } from 'a-type-of-js';
+ *
+ * console.log(isBusinessEmptyString('')); // true
+ * console.log(isBusinessEmptyString(' ')); // true
+ * console.log(isBusinessEmptyString('  ')); // true
+ * console.log(isBusinessEmptyString(new String())); // true
+ * console.log(isBusinessEmptyString(new String(''))); // true
+ * console.log(isBusinessEmptyString(new String(' '))); // true
+ *
+ * // 以下情况返回 false
+ * console.log(isBusinessEmptyString('abc')); // false
+ * console.log(isBusinessEmptyString(123)); // false (number 不是 string)
+ * console.log(isBusinessEmptyString(true)); // false (boolean 不是 string)
+ * console.log(isBusinessEmptyString(null)); // false (null 不是 string)
+ * ```
+ *
+ */
+export function isBusinessEmptyString(input: unknown): input is '' {
+  return isString(input) && input.valueOf().trim() === '';
+}
