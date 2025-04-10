@@ -6,6 +6,9 @@ import json from '@rollup/plugin-json';
 import cleanup from 'rollup-plugin-cleanup';
 import copy from 'rollup-plugin-copy';
 
+/** 配置需要不打包进生产包的包名配置  */
+const excludedPkg = ['node:', 'a-', 'color-pen'];
+
 export default {
   input: './index.ts',
   output: [
@@ -28,7 +31,7 @@ export default {
     },
   ],
   // 配置需要排除的包
-  external: id => /^(node:)|^(tslib)/.test(id),
+  external: id => new RegExp('^'.concat(excludedPkg.join('|^'))).test(id),
   plugins: [
     resolve(),
     commonjs(),

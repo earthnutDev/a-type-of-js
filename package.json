@@ -3,14 +3,6 @@
   "type": "module",
   "private": true,
   "version": "0.2.1-test.0",
-  "main": "cjs/index.cjs",
-  "module": "mjs/index.mjs",
-  "types": "types/index.d.ts",
-  "author": {
-    "name": "earthnut",
-    "email": "earthnut.dev@outlook.com",
-    "url": "https://earthnut.dev"
-  },
   "description": "JavaScript/TypeScript 的类型检测工具，支持 TypeScript 类型收缩",
   "scripts": {
     "b": "rollup --config rollup.config.js && tsc -p tsconfig.types.json",
@@ -28,40 +20,7 @@
     "prepublishOnly": "pjj",
     "prepare": "husky"
   },
-  "files": [
-    "cjs",
-    "mjs",
-    "types"
-  ],
-  "exports": {
-    ".": {
-      "import": {
-        "default": "./mjs/index.mjs",
-        "types": "./types/index.d.ts"
-      },
-      "require": {
-        "default": "./cjs/index.cjs",
-        "types": "./types/index.d.ts"
-      }
-    }
-  },
-  "keywords": [
-    "a-type-of-js"
-  ],
   "license": "ISC",
-  "homepage": "https://earthnut.dev/a-type-of-js",
-  "bugs": {
-    "url": "https://github.com/earthnutDev/a-type-of-js/issues",
-    "email": "earthnut.dev@outlook.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/earthnutDev/a-type-of-js.git"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "lint-staged": {
     "**/*.{js,ts,tsx,jex,md,mdx}": [
       "eslint --fix",
