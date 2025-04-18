@@ -8,6 +8,12 @@ on:
         description: '触发原因（选填）'
         required: false
         default: '手动触发'
+        type: string
+      ref:
+        description: '发布的分支（选填）'
+        required: false
+        default: ''
+        type: string
 
 jobs:
   pub:
@@ -31,7 +37,7 @@ jobs:
       - name: 代码检出
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event.inputs.ref || github.ref_name }}
           fetch-depth: 1
 
       - name: 初始化 Node 并设定 Node 版本

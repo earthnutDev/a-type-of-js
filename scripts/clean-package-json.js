@@ -49,9 +49,10 @@ packageJson = {
     registry: 'https://registry.npmjs.org/',
   },
 };
+{
+  const distPath = getDirectoryBy('dist', 'directory');
 
-const distPath = getDirectoryBy('dist', 'directory');
+  const distPackagePath = pathJoin(distPath, './dist/package.json');
 
-const distPackagePath = pathJoin(distPath, './dist/package.json');
-
-writeJsonFile(distPackagePath, packageJson);
+  writeJsonFile(distPackagePath, packageJson);
+}
