@@ -6,6 +6,6 @@ node_modules/*
 
 list
 
-test/out
+.eg
 
 .DS_Store
