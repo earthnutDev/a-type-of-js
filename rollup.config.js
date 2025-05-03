@@ -5,9 +5,7 @@ import json from '@rollup/plugin-json';
 // import terser from '@rollup/plugin-terser';
 import cleanup from 'rollup-plugin-cleanup';
 import copy from 'rollup-plugin-copy';
-
-/** 配置需要不打包进生产包的包名配置  */
-const excludedPkg = ['node:', 'a-', 'color-pen'];
+import { external } from '@qqi/rollup-external';
 
 export default {
   input: './index.ts',
@@ -20,7 +18,6 @@ export default {
       exports: 'named',
       dir: 'dist/mjs',
     },
-    //  若是生成 `bin` 类型，或是生成的文件不包含 commonJs，下面导出 commonJs 的配置可是删除
     {
       format: 'cjs',
       entryFileNames: '[name].cjs',
@@ -31,15 +28,14 @@ export default {
     },
   ],
   // 配置需要排除的包
-  external: id => new RegExp('^'.concat(excludedPkg.join('|^'))).test(id),
+  external: external(),
   plugins: [
     resolve(),
     commonjs(),
     // 可打包 json 内容
     json(),
     typescript({
-      // compilerOptions: {},
-      // exclude: ["./node_modules", "./test"],
+      tsconfig: 'tsconfig.json',
     }),
     // 打包压缩，自动去注释
     // terser(),
