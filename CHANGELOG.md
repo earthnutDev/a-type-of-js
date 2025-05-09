@@ -1,10 +1,23 @@
 # a type of js 版本日志
 
+## v0.3.0 （5 🈷️ 9 日 2025 年）
+
+### ✨ 新增函数
+
+- 添加了 `isTrue` 函数，用于判断值是否是 `true`
+- 添加了 `isFalse` 函数，用于判断值是否是 `false`
+- 添加了 `isEmptyArray` 函数，用于判断值是否是空数组
+- 添加了 `isEmptyObject` 函数，用于判断值是否是空对象
+
+## v0.2.1 （5 🈷️ 9 日 20
+
+- 文档修复
+
 ## 0.2.0(4 月 9 日 2025 年)
 
 ### 功能添加 ✨
 
-- 添加了 `isEmptyString` 方法，用于判断字符串是否为空字符串，且不包含空格
+- 添加了 `isEmptyString` 函数，用于判断字符串是否为空字符串，且不包含空格
 - 添加了 `isBusinessEmptyString`，用于判断字符串是否为空字符串，且包含空格
 
 ## 0.1.5(3 月 27 日 2025 年)
@@ -26,7 +39,7 @@
 ## 0.0.6 (3 月 19 日 2025 年)
 
 - 修复了 `isEvalError`、`isRangeError`、`isReferenceError`、`isSyntaxError`、`isTypeError`、`isURIError`、`isAggregateError` 返回值不准确的问题
-- 添加了 `isType` 方法
+- 添加了 `isType` 函数
 
 ## 0.0.5 (3 月 16 日 2025 年)
 
@@ -46,9 +59,9 @@
 
 ## 0.0.1 (3 月 7 日 2025 年)
 
-- 移除了 `isAtomics` 方法。因为 `Atomics` 仅是一个方法集合，没有实例。同样的还有 `Math、JSON、Reflect、Intl`
-- 移除了 `isWindow` 方法
-- 优化了 `typeOf` 方法，检测 `asyncFunction`、`generator`、`generatorFunction` 更精准
+- 移除了 `isAtomics` 函数。因为 `Atomics` 仅是一个函数集合，没有实例。同样的还有 `Math、JSON、Reflect、Intl`
+- 移除了 `isWindow` 函数
+- 优化了 `typeOf` 函数，检测 `asyncFunction`、`generator`、`generatorFunction` 更精准
 
 ## 0.0.0 (3 月 4 日 2025 年)
 

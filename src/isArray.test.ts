@@ -3,6 +3,7 @@ import {
   isArrayBuffer,
   isBigInt64Array,
   isBigUint64Array,
+  isEmptyArray,
   isFloat32Array,
   isFloat64Array,
   isInt16Array,
@@ -23,6 +24,14 @@ describe('isNumber', () => {
       expect(isArray(value)).toBe(expectedType === 'array');
     });
   });
+
+  describe('is empty array', () => {
+    expect(isEmptyArray([])).toBe(true);
+    expect(isEmptyArray([undefined])).toBe(false);
+    expect(isEmptyArray([1])).toBe(false);
+    expect(() => isEmptyArray(1)).toThrow(TypeError);
+  });
+
   describe('isSet function', () => {
     test.each(testList)('测试值  %p  时应返回  %p', (value, expectedType) => {
       expect(isSet(value)).toBe(expectedType === 'set');

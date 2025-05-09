@@ -74,18 +74,22 @@ function doSomething(value: string | number | boolean | ) {
 ### 文档提供类型检测
 
 - `isString` 字符串、`String` 对象构建的字符串
+- `isEmptyString` 空字符串
+- `isBusinessEmptyString` 空字符串（去除首尾空格）
 - `isNumber` 数字、`Number` 对象构建的数字
 - `isBoolean` 布尔值、`Boolean` 对象构建的布尔值
+- `isTrue` 是否为 true
+- `isFalse` 是否为 false
 - `isNull` null
 - `isUndefined` undefined
 - `isNaN` `NaN`（`NaN` 是一个特殊的数值 `NaN !== NaN` 即便 `typeof NaN` 返回的是 `number`）
 - `isFunction` 函数
 - `isArray` 数组、`Array` 对象构建的数组
-- `isEmptyString` 空字符串
-- `isBusinessEmptyString` 空字符串（去除首尾空格）
+- `isEmptyArray` 是否是空数组
 - `isSymbol` symbol
 - `isBigInt` 大整数
 - `isPlainObject` 对象（普通对象，非其他内置对象类型）
+- `isEmptyObject` 是否为空对象（没有私有键的对象）
 - `isPromise` Promise
 - `isAsyncFunction` 异步函数
 - `isDate` 时间

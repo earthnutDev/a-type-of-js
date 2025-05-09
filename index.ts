@@ -11,7 +11,7 @@ export {
 
 export { isNumber, isNaN, isBigInt } from './src/isNumber';
 
-export { isBoolean } from './src/isBoolean';
+export { isBoolean, isTrue, isFalse } from './src/isBoolean';
 
 export { isNull, isUndefined } from './src/isNull';
 
@@ -25,6 +25,7 @@ export {
 
 export {
   isArray,
+  isEmptyArray,
   isSet,
   isWeakSet,
   isBigInt64Array,
@@ -43,6 +44,7 @@ export {
 
 export {
   isPlainObject,
+  isEmptyObject,
   isDate,
   isDataView,
   isMap,

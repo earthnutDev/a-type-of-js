@@ -5,7 +5,7 @@
  * @module @a-type-of-js/null
  * @license MIT
  */
-import { typeOf } from './typeOf';
+
 /**
  *
  * 检测 `input` 是否是  类型`null`
@@ -24,7 +24,7 @@ import { typeOf } from './typeOf';
  * ```
  */
 export function isNull(input: unknown): input is null {
-  return typeOf(input) === 'null';
+  return input === null;
 }
 
 /**
@@ -46,5 +46,5 @@ export function isNull(input: unknown): input is null {
  *
  */
 export function isUndefined(input: unknown): input is undefined {
-  return typeOf(input) === 'undefined';
+  return input === undefined;
 }

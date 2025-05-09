@@ -29,6 +29,31 @@ export function isArray(input: unknown): input is Array<unknown> {
 
 /**
  *
+ * 检测 `input` 是否是空数组
+ *
+ * @param input - 待检测的数据，任意数组
+ * @returns 返回 `true` 则说明该数据 `input` 为长度为 0 的空数组 ，且在 Typescript 中进行类型收缩
+ * @example
+ *
+ * ```ts
+ * import  { isEmptyArray } from 'a-type-of-js';
+ *
+ * console.log(isEmptyArray([])) // true
+ *
+ * console.log(isEmptyArray([1,2,3])) // false
+ * console.log(isEmptyArray({})) // TypeError
+ * console.log(isEmptyArray(new Set())) // false
+ * ```
+ */
+export function isEmptyArray(input: unknown[]): input is [] {
+  if (isArray(input)) {
+    return input.length === 0;
+  }
+  throw new TypeError('参数必须为数组');
+}
+
+/**
+ *
  * 检测 `input` 是否是  类型`Set`
  *
  * @param input - 待检测的数据，任意类型

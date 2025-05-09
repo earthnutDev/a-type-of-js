@@ -9,7 +9,7 @@ import { typeOf } from './typeOf';
 
 /**
  *
- * 检测 `input` 是否是  类型`plain object`
+ * 检测 `input` 是否是类型 `plain object` （自定义的对象）
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `object` ，且在 Typescript 中进行类型收缩
@@ -27,6 +27,73 @@ import { typeOf } from './typeOf';
  */
 export function isPlainObject<T extends object>(input: unknown): input is T {
   return typeOf(input) === 'object';
+}
+
+/**
+ *
+ * 检测 `input` 是否是否是一个没有自己私有键的对象
+ *
+ * @param input - 待检测的数据，任意类型
+ * @returns 是否为空的对象。不包含任何属性，包括 Symbol 或是不可被枚举的属性
+ * @example
+ *
+ * ```ts
+ * import { isEmptyObject } from 'a-type-of-js';
+ *
+ * const a = new Object();
+ *
+ * console.log(isEmptyObject(a)); // true
+ * console.log(Reflect.ownKeys(input).length); // 0
+ * console.log(Object.keys(a).length); // 0
+ * console.log(Object.getOwnPropertyNames(a).length); // 0
+ * console.log(Object.getOwnPropertySymbols(a).length); // 0
+ *
+ * Object.defineProperties(a, {
+ *     a: {
+ *       value: 10,
+ *       enumerable: false,
+ *       writable: false,
+ *       configurable: false,
+ *     },
+ * });
+ *
+ * console.log(isEmptyObject(a)); // false
+ * console.log(Reflect.ownKeys(input).length); // 1
+ * console.log(Object.keys(a).length); // 0
+ * console.log(Object.getOwnPropertyNames(a).length); // 1
+ * console.log(Object.getOwnPropertySymbols(a).length); // 0
+ *
+ * const b = Symbol('private proto');
+ *
+ * a[b] = b;
+ *
+ * console.log(isEmptyObject(a)); // false
+ * console.log(Reflect.ownKeys(input).length); // 2
+ * console.log(Object.keys(a).length); // 0
+ * console.log(Object.getOwnPropertyNames(a).length); // 1
+ * console.log(Object.getOwnPropertySymbols(a).length); // 1
+ *
+ * delete a[a];
+ *
+ * console.log(isEmptyObject(a)); // false
+ * console.log(Reflect.ownKeys(input).length); // 1
+ * console.log(Object.keys(a).length); // 0
+ * console.log(Object.getOwnPropertyNames(a).length); // 0
+ * console.log(Object.getOwnPropertySymbols(a).length); // 1
+ *
+ *
+ * delete a[b];
+ *
+ * console.log(isEmptyObject(a)); // true
+ * console.log(Reflect.ownKeys(input).length); // 0
+ * console.log(Object.keys(a).length); // 0
+ * console.log(Object.getOwnPropertyNames(a).length); // 0
+ * console.log(Object.getOwnPropertySymbols(a).length); // 0
+ *
+ * ```
+ */
+export function isEmptyObject(input: unknown): input is Record<string, never> {
+  return isPlainObject(input) && Reflect.ownKeys(input).length === 0;
 }
 
 /**

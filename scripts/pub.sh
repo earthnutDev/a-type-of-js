@@ -2,13 +2,11 @@
 
 npm ci
 
-output=$(npx @qqi/check-version c=. 2>&1)
-tag=""
+tag=$(npx @qqi/check-version c=. 2>&1)
+
 exit_code=$?
-if [ $exit_code -eq 0 ];then
-  tag="$output"
-else
-  echo "$output"
+if [ $exit_code -ne 0 ];then
+  echo "$tag"
   exit 1
 fi
 
@@ -24,6 +22,8 @@ if ! cd dist; then
 fi
 
 echo "开始发布 npm 包"
+
+
 
 if ! npm publish --provenance --access public --tag ${tag} ; then
     echo "发布失败" 
