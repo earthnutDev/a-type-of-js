@@ -9,7 +9,14 @@ export {
   isBusinessEmptyString,
 } from './src/isString';
 
-export { isNumber, isNaN, isBigInt } from './src/isNumber';
+export {
+  isNumber,
+  isNaN,
+  isBigInt,
+  isZero,
+  isNegativeInteger,
+  isPositiveInteger,
+} from './src/isNumber';
 
 export { isBoolean, isTrue, isFalse } from './src/isBoolean';
 
