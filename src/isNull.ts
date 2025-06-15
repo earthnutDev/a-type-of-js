@@ -8,7 +8,7 @@
 
 /**
  *
- * 检测 `input` 是否是  类型`null`
+ * 检测 `input` 是否是 `null` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `null` ，且在 Typescript 中进行类型收缩
@@ -29,7 +29,7 @@ export function isNull(input: unknown): input is null {
 
 /**
  *
- * 检测 `input` 是否是  类型`undefined`
+ * 检测 `input` 是否是 `undefined` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `undefined` ，且在 Typescript 中进行类型收缩

@@ -31,7 +31,7 @@ export function isString(input: unknown): input is string {
 
 /**
  *
- * 检测 `input` 是否是  类型`RegExp`
+ * 检测 `input` 是否是 `RegExp` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `RegExp` ，且在 Typescript 中进行类型收缩

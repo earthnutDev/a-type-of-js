@@ -8,7 +8,7 @@
 import { typeOf } from './typeOf';
 /**
  *
- * 检测 `input` 是否是  类型`Intl.Collator`
+ * 检测 `input` 是否是 `Intl.Collator` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.Collator` ，且在 Typescript 中进行类型收缩
@@ -28,7 +28,7 @@ export function isIntlCollator(input: unknown): input is Intl.Collator {
 
 /**
  *
- * 检测 `input` 是否是  类型`Intl.DateTimeFormat`
+ * 检测 `input` 是否是 `Intl.DateTimeFormat` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.DateTimeFormat` ，且在 Typescript 中进行类型收缩
@@ -53,7 +53,7 @@ export function isIntlDateTimeFormat(
 
 /**
  *
- * 检测 `input` 是否是  类型`Intl.DisplayNames`
+ * 检测 `input` 是否是 `Intl.DisplayNames` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.DisplayNames` ，且在 Typescript 中进行类型收缩
@@ -73,7 +73,7 @@ export function isIntlDisplayNames(input: unknown): input is Intl.DisplayNames {
 }
 /**
  *
- * 检测 `input` 是否是  类型`Intl.DurationFormat`
+ * 检测 `input` 是否是 `Intl.DurationFormat` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.DurationFormat` ，且在 Typescript 中进行类型收缩
@@ -92,7 +92,7 @@ export function isIntlDisplayNames(input: unknown): input is Intl.DisplayNames {
 // }
 /**
  *
- * 检测 `input` 是否是  类型`Intl.ListFormat`
+ * 检测 `input` 是否是 `Intl.ListFormat` 类型
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.ListFormat` ，且在 Typescript 中进行类型收缩
  * @example
@@ -114,7 +114,7 @@ export function isIntlListFormat(input: unknown): input is Intl.ListFormat {
 
 /**
  *
- * 检测 `input` 是否是  类型`Intl.Locale`
+ * 检测 `input` 是否是 `Intl.Locale` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.Locale` ，且在 Typescript 中进行类型收缩
@@ -135,7 +135,7 @@ export function isIntlLocale(input: unknown): input is Intl.Locale {
 }
 /**
  *
- * 检测 `input` 是否是  类型`Intl.NumberFormat`
+ * 检测 `input` 是否是 `Intl.NumberFormat` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Intl.NumberFormat` ，且在 Typescript 中进行类型收缩

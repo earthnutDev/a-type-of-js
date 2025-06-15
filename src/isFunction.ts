@@ -9,7 +9,7 @@ import { typeOf } from './typeOf';
 
 /**
  *
- * 检测 `input` 是否是  类型`function`
+ * 检测 `input` 是否是 `function` 类型
  *
  * Function classification:
  * - Ordinary functions
@@ -35,7 +35,7 @@ export function isFunction<T extends () => void>(input: unknown): input is T {
 
 /**
  *
- * 检测 `input` 是否是  类型`Promise`
+ * 检测 `input` 是否是 `Promise` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Promise` ，且在 Typescript 中进行类型收缩
@@ -53,7 +53,7 @@ export function isPromise<T>(input: unknown): input is Promise<T> {
 }
 /**
  *
- * 检测 `input` 是否是  类型`AsyncFunction`
+ * 检测 `input` 是否是 `AsyncFunction` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `async function` ，且在 Typescript 中进行类型收缩
@@ -74,7 +74,7 @@ export function isAsyncFunction<T extends () => void>(
 
 /**
  *
- * 检测 `input` 是否是  类型`GeneratorFunction`
+ * 检测 `input` 是否是 `GeneratorFunction` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `generator function` ，且在 Typescript 中进行类型收缩
@@ -96,7 +96,7 @@ export function isGeneratorFunction(
 
 /**
  *
- * 检测 `input` 是否是  类型`Generator`
+ * 检测 `input` 是否是 `Generator` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Generator` ，且在 Typescript 中进行类型收缩

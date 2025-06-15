@@ -9,7 +9,7 @@ import { typeOf } from './typeOf';
 
 /**
  *
- * 检测 `input` 是否是  类型`Array`
+ * 检测 `input` 是否是 `Array` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `ReferenceError` ，且在 Typescript 中进行类型收缩
@@ -54,7 +54,7 @@ export function isEmptyArray(input: unknown[]): input is [] {
 
 /**
  *
- * 检测 `input` 是否是  类型`Set`
+ * 检测 `input` 是否是 `Set` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `ReferenceError` ，且在 Typescript 中进行类型收缩
@@ -73,7 +73,7 @@ export function isSet<T = unknown>(input: unknown): input is Set<T> {
 }
 /**
  *
- * 检测 `input` 是否是  类型`WeakSet`
+ * 检测 `input` 是否是 `WeakSet` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `WeakSet` ，且在 Typescript 中进行类型收缩
@@ -97,7 +97,7 @@ export function isWeakSet<T extends WeakKey>(
 
 /**
  *
- * 检测 `input` 是否是  类型`Bigint64Array`
+ * 检测 `input` 是否是 `Bigint64Array` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `BigInt64Array` ，且在 Typescript 中进行类型收缩
@@ -122,7 +122,7 @@ export function isBigInt64Array<
 
 /**
  *
- * 检测 `input` 是否是  类型`BigUint64Array`
+ * 检测 `input` 是否是 `BigUint64Array` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `BigUint64Array` ，且在 Typescript 中进行类型收缩
@@ -147,7 +147,7 @@ export function isBigUint64Array<T extends ArrayBufferLike = ArrayBufferLike>(
 
 /**
  *
- * 检测 `input` 是否是  类型`ArrayBuffer`
+ * 检测 `input` 是否是 `ArrayBuffer` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `ArrayBuffer` ，且在 Typescript 中进行类型收缩
@@ -167,7 +167,7 @@ export function isArrayBuffer(input: unknown): input is ArrayBuffer {
 }
 /**
  *
- * 检测 `input` 是否是  类型`int8Array`
+ * 检测 `input` 是否是 `int8Array` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Int8Array` ，且在 Typescript 中进行类型收缩
@@ -192,7 +192,7 @@ export function isInt8Array<
 
 /**
  *
- * 检测 `input` 是否是  类型`uint8Array`
+ * 检测 `input` 是否是 `uint8Array` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Uint8Array` ，且在 Typescript 中进行类型收缩
@@ -217,7 +217,7 @@ export function isUint8Array<
 
 /**
  *
- * 检测 `input` 是否是  类型`int16Array`
+ * 检测 `input` 是否是 `int16Array` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Int16Array` ，且在 Typescript 中进行类型收缩
@@ -241,7 +241,7 @@ export function isInt16Array<
 }
 /**
  *
- * 检测 `input` 是否是  类型`uint16Array`
+ * 检测 `input` 是否是 `uint16Array` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Uint16Array` ，且在 Typescript 中进行类型收缩
@@ -267,7 +267,7 @@ export function isUint16Array<
 
 /**
  *
- * 检测 `input` 是否是  类型`uint32Array`
+ * 检测 `input` 是否是 `uint32Array` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Uint32Array` ，且在 Typescript 中进行类型收缩
@@ -292,7 +292,7 @@ export function isUint32Array<
 
 /**
  *
- * 检测 `input` 是否是  类型`float32Array`
+ * 检测 `input` 是否是 `float32Array` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Float32Array` ，且在 Typescript 中进行类型收缩
@@ -316,7 +316,7 @@ export function isFloat32Array<
 
 /**
  *
- * 检测 `input` 是否是  类型`float64Array`
+ * 检测 `input` 是否是 `float64Array` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Float64Array` ，且在 Typescript 中进行类型收缩
@@ -340,7 +340,7 @@ export function isFloat64Array<
 
 /**
  *
- * 检测 `input` 是否是  类型`sharedArrayBuffer`
+ * 检测 `input` 是否是 `sharedArrayBuffer` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `SharedArrayBuffer` ，且在 Typescript 中进行类型收缩
@@ -363,7 +363,7 @@ export function isSharedArrayBuffer(
 
 /**
  *
- * 检测 `input` 是否是  类型`uint8ClampedArray`
+ * 检测 `input` 是否是 `uint8ClampedArray` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Uint8ClampedArray` ，且在 Typescript 中进行类型收缩

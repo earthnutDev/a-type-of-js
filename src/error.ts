@@ -9,7 +9,7 @@ import { typeOf } from './typeOf';
 
 /**
  *
- * 检测 `input` 是否是  类型`Error`
+ * 检测 `input` 是否是 `Error` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Error` ，且在 Typescript 中进行类型收缩
@@ -35,7 +35,7 @@ export function isError(input: unknown): input is Error {
 }
 /**
  *
- * 检测 `input` 是否是  类型`EvalError`
+ * 检测 `input` 是否是 `EvalError` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `EvalError` ，且在 Typescript 中进行类型收缩
@@ -60,7 +60,7 @@ export function isEvalError(input: unknown): input is EvalError {
 
 /**
  *
- * 检测 `input 是否是  类型`RangeError`
+ * 检测 `input 是否是 `RangeError` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `RangeError` ，且在 Typescript 中进行类型收缩
@@ -85,7 +85,7 @@ export function isRangeError(input: unknown): input is RangeError {
 
 /**
  *
- * 检测 `input` 是否是  类型`ReferenceError`
+ * 检测 `input` 是否是 `ReferenceError` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `ReferenceError` ，且在 Typescript 中进行类型收缩
@@ -111,7 +111,7 @@ export function isReferenceError(input: unknown): input is ReferenceError {
 /**
  *
  *
- * 检测 `input` 是否是  类型`SyntaxError`
+ * 检测 `input` 是否是 `SyntaxError` 类型
  *
  *  @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `SyntaxError` ，且在 Typescript 中进行类型收缩
@@ -137,7 +137,7 @@ export function isSyntaxError(input: unknown): input is SyntaxError {
 
 /**
  *
- * 检测 `input` 是否是  类型`TypeError`
+ * 检测 `input` 是否是 `TypeError` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `TypeError` ，且在 Typescript 中进行类型收缩
@@ -163,7 +163,7 @@ export function isTypeError(input: unknown): input is TypeError {
 
 /**
  *
- * 检测 `input` 是否是  类型`URIError`
+ * 检测 `input` 是否是 `URIError` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `URIError` ，且在 Typescript 中进行类型收缩
@@ -183,7 +183,7 @@ export function isURIError(input: unknown): input is URIError {
 
 /**
  *
- * 检测 `input` 是否是  类型`AggregateError`
+ * 检测 `input` 是否是 `AggregateError` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `AggregateError` ，且在 Typescript 中进行类型收缩

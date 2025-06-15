@@ -10,7 +10,7 @@ import { typeOf } from './typeOf';
 
 /**
  *
- * 检测 `input` 是否是  类型`number`
+ * 检测 `input` 是否是 `number` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `number` ，且在 Typescript 中进行类型收缩
@@ -31,7 +31,7 @@ export function isNumber(input: unknown): input is number {
 
 /**
  *
- * 检测 `input` 是否是  类型`BigInt`
+ * 检测 `input` 是否是 `BigInt` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `bigint` ，且在 Typescript 中进行类型收缩
@@ -53,7 +53,7 @@ export function isBigInt(input: unknown): input is bigint {
 
 /**
  *
- * 检测 `input` 是否是  类型`NaN`
+ * 检测 `input` 是否是 `NaN` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `NaN` ，且在 Typescript 中进行类型收缩

@@ -126,7 +126,7 @@ export function isDate(input: unknown): input is Date {
 
 /**
  *
- * 检测 `input` 是否是  类型`DataView`
+ * 检测 `input` 是否是 `DataView` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `DataView` ，且在 Typescript 中进行类型收缩
@@ -148,7 +148,7 @@ export function isDataView<T extends ArrayBufferLike = ArrayBufferLike>(
 
 /**
  *
- * 检测 `input` 是否是  类型`Map`
+ * 检测 `input` 是否是 `Map` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `Map` ，且在 Typescript 中进行类型收缩
@@ -173,7 +173,7 @@ export function isMap<K extends string, V = unknown>(
 
 /**
  *
- * 检测 `input` 是否是  类型`WeakMap`
+ * 检测 `input` 是否是 `WeakMap` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `WeakMap` ，且在 Typescript 中进行类型收缩

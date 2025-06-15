@@ -9,7 +9,7 @@ import { typeOf } from './typeOf';
 
 /**
  *
- * 检测 `input` 是否是  类型`Symbol`
+ * 检测 `input` 是否是 `Symbol` 类型
  *
  * @param input - 待检测的数据，任意类型
  * @returns 返回 `true` 则说明该数据 `input` 类型为 `symbol` ，且在 Typescript 中进行类型收缩
