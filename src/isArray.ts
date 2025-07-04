@@ -23,7 +23,7 @@ import { typeOf } from './typeOf';
  * console.log(isArray(new Set())) // false
  * ```
  */
-export function isArray(input: unknown): input is Array<unknown> {
+export function isArray<T = unknown>(input: unknown): input is Array<T> {
   return Array.isArray(input);
 }
 
@@ -45,7 +45,7 @@ export function isArray(input: unknown): input is Array<unknown> {
  * console.log(isEmptyArray(new Set())) // false
  * ```
  */
-export function isEmptyArray(input: unknown[]): input is [] {
+export function isEmptyArray<T = unknown>(input: unknown[]): input is T[] {
   if (isArray(input)) {
     return input.length === 0;
   }
