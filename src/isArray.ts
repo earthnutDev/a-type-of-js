@@ -45,7 +45,7 @@ export function isArray<T = unknown>(input: unknown): input is Array<T> {
  * console.log(isEmptyArray(new Set())) // false
  * ```
  */
-export function isEmptyArray<T = unknown>(input: unknown[]): input is T[] {
+export function isEmptyArray(input: unknown[]): boolean {
   if (isArray(input)) {
     return input.length === 0;
   }
