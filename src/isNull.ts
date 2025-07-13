@@ -23,7 +23,7 @@
  * console.log(isNull(1)); // false
  * ```
  */
-export function isNull(input: unknown): input is null {
+export function isNull(input: any): input is null {
   return input === null;
 }
 
@@ -45,6 +45,6 @@ export function isNull(input: unknown): input is null {
  * ```
  *
  */
-export function isUndefined(input: unknown): input is undefined {
+export function isUndefined(input: any): input is undefined {
   return input === undefined;
 }

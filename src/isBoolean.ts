@@ -24,7 +24,7 @@ import { typeOf } from './typeOf';
  * console.log(isBoolean('true')); // false
  * ```
  */
-export function isBoolean(input: unknown): input is boolean {
+export function isBoolean(input: any): input is boolean {
   return typeOf(input) === 'boolean';
 }
 
@@ -46,7 +46,7 @@ export function isBoolean(input: unknown): input is boolean {
  * console.log(isTrue('true')); // false
  * ```
  */
-export function isTrue(input: unknown): input is true {
+export function isTrue(input: any): input is true {
   return input === true;
 }
 /**
@@ -67,6 +67,6 @@ export function isTrue(input: unknown): input is true {
  * console.log(isFalse('true')); // false
  * ```
  */
-export function isFalse(input: unknown): input is false {
+export function isFalse(input: any): input is false {
   return input === false;
 }

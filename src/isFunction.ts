@@ -29,7 +29,9 @@ import { typeOf } from './typeOf';
  * console.log(isFunction(function* () {})); // false
  * ```
  */
-export function isFunction<T extends () => void>(input: unknown): input is T {
+export function isFunction<T extends (...args: any[]) => void>(
+  input: any,
+): input is T {
   return 'function' === typeOf(input);
 }
 
@@ -48,7 +50,7 @@ export function isFunction<T extends () => void>(input: unknown): input is T {
  * console.log(isPromise(() => {})); // false
  * ```
  */
-export function isPromise<T>(input: unknown): input is Promise<T> {
+export function isPromise<T>(input: any): input is Promise<T> {
   return typeOf(input) === 'promise';
 }
 /**
@@ -66,8 +68,8 @@ export function isPromise<T>(input: unknown): input is Promise<T> {
  * console.log(isAsyncFunction(() => {})); // false
  * ```
  */
-export function isAsyncFunction<T extends () => void>(
-  input: unknown,
+export function isAsyncFunction<T extends (...args: any[]) => void>(
+  input: any,
 ): input is () => Promise<T> {
   return typeOf(input) === 'asyncfunction';
 }
@@ -88,9 +90,7 @@ export function isAsyncFunction<T extends () => void>(
  * ```
  *
  */
-export function isGeneratorFunction(
-  input: unknown,
-): input is GeneratorFunction {
+export function isGeneratorFunction(input: any): input is GeneratorFunction {
   return typeOf(input) === 'generatorfunction';
 }
 
@@ -123,6 +123,6 @@ export function isGeneratorFunction(
  *
  * ```
  */
-export function isGenerator(input: unknown): input is Generator {
+export function isGenerator(input: any): input is Generator {
   return typeOf(input) === 'generator';
 }

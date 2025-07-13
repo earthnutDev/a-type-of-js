@@ -36,7 +36,7 @@ import { Typeof } from './types';
  * ```
  *
  */
-export function typeOf(input: unknown): Typeof {
+export function typeOf(input: any): Typeof {
   /**************************
    * 使用 typeof 判断数据类型
    **************************/

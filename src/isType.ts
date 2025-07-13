@@ -22,7 +22,7 @@
  * ```
  *
  */
-export function isType<T = string>(input: unknown): input is T;
+export function isType<T = string>(input: any): input is T;
 
 /**
  *
@@ -86,13 +86,13 @@ export function isType<T = string>(input: unknown): input is T;
  *
  */
 export function isType<T = string>(
-  input: unknown,
+  input: any,
   judgingConditions: boolean | ((input: T) => boolean),
 ): input is T;
 
 /**    */
 export function isType<T = string>(
-  input: unknown,
+  input: any,
   judgingConditions?: boolean | ((input: T) => boolean),
 ): input is T {
   if (judgingConditions === undefined) return true;

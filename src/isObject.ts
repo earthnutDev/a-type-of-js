@@ -25,7 +25,7 @@ import { typeOf } from './typeOf';
  * console.log(isPlainObject(new Map())); // false ( Map is not an plain object )
  * ```
  */
-export function isPlainObject<T extends object>(input: unknown): input is T {
+export function isPlainObject<T extends object>(input: any): input is T {
   return typeOf(input) === 'object';
 }
 
@@ -92,7 +92,7 @@ export function isPlainObject<T extends object>(input: unknown): input is T {
  *
  * ```
  */
-export function isEmptyObject(input: unknown): input is Record<string, never> {
+export function isEmptyObject(input: any): input is Record<string, never> {
   return isPlainObject(input) && Reflect.ownKeys(input).length === 0;
 }
 
@@ -120,7 +120,7 @@ export function isEmptyObject(input: unknown): input is Record<string, never> {
  *
  *
  */
-export function isDate(input: unknown): input is Date {
+export function isDate(input: any): input is Date {
   return typeOf(input) === 'date';
 }
 
@@ -141,7 +141,7 @@ export function isDate(input: unknown): input is Date {
  * ```
  */
 export function isDataView<T extends ArrayBufferLike = ArrayBufferLike>(
-  input: unknown,
+  input: any,
 ): input is DataView<T> {
   return typeOf(input) === 'dataview';
 }
@@ -165,8 +165,8 @@ export function isDataView<T extends ArrayBufferLike = ArrayBufferLike>(
  * console.log(isMap(new Array())); // false (Array 不是 Map)
  * ```
  */
-export function isMap<K extends string, V = unknown>(
-  input: unknown,
+export function isMap<K extends string, V = any>(
+  input: any,
 ): input is Map<K, V> {
   return typeOf(input) === 'map';
 }
@@ -190,6 +190,6 @@ export function isMap<K extends string, V = unknown>(
  * console.log(isWeakMap(new Array())); // false (Array is not WeakMap)
  * ```
  */
-export function isWeakMap(input: unknown): input is WeakMap<object, unknown> {
+export function isWeakMap(input: any): input is WeakMap<object, any> {
   return typeOf(input) === 'weakmap';
 }

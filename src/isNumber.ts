@@ -25,7 +25,7 @@ import { typeOf } from './typeOf';
  *
  * ```
  */
-export function isNumber(input: unknown): input is number {
+export function isNumber(input: any): input is number {
   return typeOf(input) === 'number';
 }
 
@@ -47,7 +47,7 @@ export function isNumber(input: unknown): input is number {
  * isBigInt(true); // false
  * ```
  */
-export function isBigInt(input: unknown): input is bigint {
+export function isBigInt(input: any): input is bigint {
   return typeOf(input) === 'bigint';
 }
 
@@ -68,7 +68,7 @@ export function isBigInt(input: unknown): input is bigint {
  *
  * ```
  */
-export function isNaN(input: unknown): input is typeof NaN {
+export function isNaN(input: any): input is typeof NaN {
   return Number.isNaN(input);
 }
 /**
@@ -97,7 +97,7 @@ export function isNaN(input: unknown): input is typeof NaN {
  *
  *
  */
-export function isPositiveInteger(input: unknown): input is number {
+export function isPositiveInteger(input: any): input is number {
   return Number.isInteger(input) && isNumber(input) && input > 0;
 }
 
@@ -127,7 +127,7 @@ export function isPositiveInteger(input: unknown): input is number {
  *
  *
  */
-export function isNegativeInteger(input: unknown): input is number {
+export function isNegativeInteger(input: any): input is number {
   return Number.isInteger(input) && isNumber(input) && input < 0;
 }
 
@@ -156,6 +156,6 @@ export function isNegativeInteger(input: unknown): input is number {
  * ```
  *
  */
-export function isZero(input: unknown): input is 0 {
+export function isZero(input: any): input is 0 {
   return input === 0;
 }

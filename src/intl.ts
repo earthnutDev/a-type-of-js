@@ -22,7 +22,7 @@ import { typeOf } from './typeOf';
  * console.log(isIntlCollator(new Intl.DateTimeFormat())); // false
  * ```
  */
-export function isIntlCollator(input: unknown): input is Intl.Collator {
+export function isIntlCollator(input: any): input is Intl.Collator {
   return typeOf(input) === 'intl.collator';
 }
 
@@ -45,9 +45,7 @@ export function isIntlCollator(input: unknown): input is Intl.Collator {
  * console.log(isIntlDateTimeFormat(true)); // false
  * ```
  */
-export function isIntlDateTimeFormat(
-  input: unknown,
-): input is Intl.DateTimeFormat {
+export function isIntlDateTimeFormat(input: any): input is Intl.DateTimeFormat {
   return typeOf(input) === 'intl.datetimeformat';
 }
 
@@ -68,7 +66,7 @@ export function isIntlDateTimeFormat(
  * ```
  *
  */
-export function isIntlDisplayNames(input: unknown): input is Intl.DisplayNames {
+export function isIntlDisplayNames(input: any): input is Intl.DisplayNames {
   return typeOf(input) === 'intl.displaynames';
 }
 /**
@@ -86,7 +84,7 @@ export function isIntlDisplayNames(input: unknown): input is Intl.DisplayNames {
  *
  */
 // export function isIntlDurationFormat(
-//   input: unknown,
+//   input: any,
 // ): input is Intl.DurationFormat {
 //   return typeOf(input) === 'intl.durationformat';
 // }
@@ -108,7 +106,7 @@ export function isIntlDisplayNames(input: unknown): input is Intl.DisplayNames {
  * console.log(isIntlListFormat(null)); // false
  * ```
  */
-export function isIntlListFormat(input: unknown): input is Intl.ListFormat {
+export function isIntlListFormat(input: any): input is Intl.ListFormat {
   return typeOf(input) === 'intl.listformat';
 }
 
@@ -130,7 +128,7 @@ export function isIntlListFormat(input: unknown): input is Intl.ListFormat {
  * console.log(isIntlLocale(1)); // false
  * ```
  */
-export function isIntlLocale(input: unknown): input is Intl.Locale {
+export function isIntlLocale(input: any): input is Intl.Locale {
   return typeOf(input) === 'intl.locale';
 }
 /**
@@ -154,6 +152,6 @@ export function isIntlLocale(input: unknown): input is Intl.Locale {
  * ```
  *
  */
-export function isIntlNumberFormat(input: unknown): input is Intl.NumberFormat {
+export function isIntlNumberFormat(input: any): input is Intl.NumberFormat {
   return typeOf(input) === 'intl.numberformat';
 }

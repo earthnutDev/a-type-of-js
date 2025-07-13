@@ -23,7 +23,7 @@ import { typeOf } from './typeOf';
  * console.log(isArray(new Set())) // false
  * ```
  */
-export function isArray<T = unknown>(input: unknown): input is Array<T> {
+export function isArray<T = any>(input: any): input is Array<T> {
   return Array.isArray(input);
 }
 
@@ -45,7 +45,7 @@ export function isArray<T = unknown>(input: unknown): input is Array<T> {
  * console.log(isEmptyArray(new Set())) // false
  * ```
  */
-export function isEmptyArray(input: unknown[]): boolean {
+export function isEmptyArray(input: any[]): boolean {
   if (isArray(input)) {
     return input.length === 0;
   }
@@ -68,7 +68,7 @@ export function isEmptyArray(input: unknown[]): boolean {
  * console.log(isSet([])) // false
  * ```
  */
-export function isSet<T = unknown>(input: unknown): input is Set<T> {
+export function isSet<T = any>(input: any): input is Set<T> {
   return typeOf(input) === 'set';
 }
 /**
@@ -89,9 +89,7 @@ export function isSet<T = unknown>(input: unknown): input is Set<T> {
  * console.log(isWeakSet(1)) // false
  * ```
  */
-export function isWeakSet<T extends WeakKey>(
-  input: unknown,
-): input is WeakSet<T> {
+export function isWeakSet<T extends WeakKey>(input: any): input is WeakSet<T> {
   return typeOf(input) === 'weakset';
 }
 
@@ -116,7 +114,7 @@ export function isWeakSet<T extends WeakKey>(
  */
 export function isBigInt64Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(input: unknown): input is BigInt64Array<TArrayBuffer> {
+>(input: any): input is BigInt64Array<TArrayBuffer> {
   return typeOf(input) === 'bigint64array';
 }
 
@@ -140,7 +138,7 @@ export function isBigInt64Array<
  *
  */
 export function isBigUint64Array<T extends ArrayBufferLike = ArrayBufferLike>(
-  input: unknown,
+  input: any,
 ): input is BigUint64Array<T> {
   return typeOf(input) === 'biguint64array';
 }
@@ -162,7 +160,7 @@ export function isBigUint64Array<T extends ArrayBufferLike = ArrayBufferLike>(
  * ```
  *
  */
-export function isArrayBuffer(input: unknown): input is ArrayBuffer {
+export function isArrayBuffer(input: any): input is ArrayBuffer {
   return typeOf(input) === 'arraybuffer';
 }
 /**
@@ -186,7 +184,7 @@ export function isArrayBuffer(input: unknown): input is ArrayBuffer {
  */
 export function isInt8Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(input: unknown): input is Int8Array<TArrayBuffer> {
+>(input: any): input is Int8Array<TArrayBuffer> {
   return typeOf(input) === 'int8array';
 }
 
@@ -211,7 +209,7 @@ export function isInt8Array<
  */
 export function isUint8Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(input: unknown): input is Uint8Array<TArrayBuffer> {
+>(input: any): input is Uint8Array<TArrayBuffer> {
   return typeOf(input) === 'uint8array';
 }
 
@@ -236,7 +234,7 @@ export function isUint8Array<
  */
 export function isInt16Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(input: unknown): input is Int16Array<TArrayBuffer> {
+>(input: any): input is Int16Array<TArrayBuffer> {
   return typeOf(input) === 'int16array';
 }
 /**
@@ -261,7 +259,7 @@ export function isInt16Array<
  */
 export function isUint16Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(input: unknown): input is Uint16Array<TArrayBuffer> {
+>(input: any): input is Uint16Array<TArrayBuffer> {
   return typeOf(input) === 'uint16array';
 }
 
@@ -286,7 +284,7 @@ export function isUint16Array<
  */
 export function isUint32Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(input: unknown): input is Uint32Array<TArrayBuffer> {
+>(input: any): input is Uint32Array<TArrayBuffer> {
   return typeOf(input) === 'uint32array';
 }
 
@@ -310,7 +308,7 @@ export function isUint32Array<
  */
 export function isFloat32Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(input: unknown): input is Float32Array<TArrayBuffer> {
+>(input: any): input is Float32Array<TArrayBuffer> {
   return typeOf(input) === 'float32array';
 }
 
@@ -334,7 +332,7 @@ export function isFloat32Array<
  */
 export function isFloat64Array<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(input: unknown): input is Float64Array<TArrayBuffer> {
+>(input: any): input is Float64Array<TArrayBuffer> {
   return typeOf(input) === 'float64array';
 }
 
@@ -355,9 +353,7 @@ export function isFloat64Array<
  *
  * ```
  */
-export function isSharedArrayBuffer(
-  input: unknown,
-): input is SharedArrayBuffer {
+export function isSharedArrayBuffer(input: any): input is SharedArrayBuffer {
   return typeOf(input) === 'sharedarraybuffer';
 }
 
@@ -382,6 +378,6 @@ export function isSharedArrayBuffer(
  */
 export function isUint8ClampedArray<
   TArrayBuffer extends ArrayBufferLike = ArrayBufferLike,
->(input: unknown): input is Uint8ClampedArray<TArrayBuffer> {
+>(input: any): input is Uint8ClampedArray<TArrayBuffer> {
   return typeOf(input) === 'uint8clampedarray';
 }

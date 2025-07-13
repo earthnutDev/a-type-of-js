@@ -30,7 +30,7 @@ import { typeOf } from './typeOf';
  *
  * @since 0.1.4
  */
-export function isError(input: unknown): input is Error {
+export function isError(input: any): input is Error {
   return typeOf(input) === 'error';
 }
 /**
@@ -54,7 +54,7 @@ export function isError(input: unknown): input is Error {
  * ```
  *
  */
-export function isEvalError(input: unknown): input is EvalError {
+export function isEvalError(input: any): input is EvalError {
   return typeOf(input) === 'evalerror';
 }
 
@@ -79,7 +79,7 @@ export function isEvalError(input: unknown): input is EvalError {
  * ```
  *
  */
-export function isRangeError(input: unknown): input is RangeError {
+export function isRangeError(input: any): input is RangeError {
   return typeOf(input) === 'rangeerror';
 }
 
@@ -104,7 +104,7 @@ export function isRangeError(input: unknown): input is RangeError {
  *
  * ```
  */
-export function isReferenceError(input: unknown): input is ReferenceError {
+export function isReferenceError(input: any): input is ReferenceError {
   return typeOf(input) === 'referenceerror';
 }
 
@@ -131,7 +131,7 @@ export function isReferenceError(input: unknown): input is ReferenceError {
  * ```
  *
  */
-export function isSyntaxError(input: unknown): input is SyntaxError {
+export function isSyntaxError(input: any): input is SyntaxError {
   return typeOf(input) === 'syntaxerror';
 }
 
@@ -157,7 +157,7 @@ export function isSyntaxError(input: unknown): input is SyntaxError {
  *
  * ```
  */
-export function isTypeError(input: unknown): input is TypeError {
+export function isTypeError(input: any): input is TypeError {
   return typeOf(input) === 'typeerror';
 }
 
@@ -177,7 +177,7 @@ export function isTypeError(input: unknown): input is TypeError {
  *
  * ```
  */
-export function isURIError(input: unknown): input is URIError {
+export function isURIError(input: any): input is URIError {
   return typeOf(input) === 'urierror';
 }
 
@@ -197,6 +197,6 @@ export function isURIError(input: unknown): input is URIError {
  *
  * ```
  */
-export function isAggregateError(input: unknown): input is AggregateError {
+export function isAggregateError(input: any): input is AggregateError {
   return typeOf(input) === 'aggregateerror';
 }

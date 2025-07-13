@@ -4,7 +4,7 @@ import { Typeof } from './types';
 export const testData: {
   [x in Typeof]: {
     type: Typeof;
-    value: unknown;
+    value: any;
   };
 } = {
   string: {

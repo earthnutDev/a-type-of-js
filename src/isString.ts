@@ -25,7 +25,7 @@ import { typeOf } from './typeOf';
  * console.log(isString(null)); // false (null 不是 string)
  * ```
  */
-export function isString(input: unknown): input is string {
+export function isString(input: any): input is string {
   return typeOf(input) === 'string';
 }
 
@@ -49,7 +49,7 @@ export function isString(input: unknown): input is string {
  * ```
  *
  */
-export function isRegExp(input: unknown): input is RegExp {
+export function isRegExp(input: any): input is RegExp {
   return typeOf(input) === 'regexp';
 }
 
@@ -79,7 +79,7 @@ export function isRegExp(input: unknown): input is RegExp {
  * ```
  *
  */
-export function isEmptyString(input: unknown): input is '' {
+export function isEmptyString(input: any): input is '' {
   return isString(input) && input.valueOf() === '';
 }
 
@@ -111,6 +111,6 @@ export function isEmptyString(input: unknown): input is '' {
  * ```
  *
  */
-export function isBusinessEmptyString(input: unknown): input is '' {
+export function isBusinessEmptyString(input: any): input is '' {
   return isString(input) && input.valueOf().trim() === '';
 }

@@ -27,6 +27,6 @@ import { typeOf } from './typeOf';
  * console.log(isSymbol(undefined)); // false (undefined 非 symbol)
  * ```
  */
-export function isSymbol(input: unknown): input is symbol {
+export function isSymbol(input: any): input is symbol {
   return typeOf(input) === 'symbol';
 }
