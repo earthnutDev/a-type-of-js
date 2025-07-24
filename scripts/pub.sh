@@ -3,7 +3,7 @@
 CHECK_VERSION="@qqi/check-version"
 # 安装  
 install_check_version() {
-    if ! pnpm  list -g --depth=0 --json | grep -q "${CHECK_VERSION}"; then 
+    if ! npm  list -g --depth=0 | grep -q "${CHECK_VERSION}"; then 
         echo "当前未全局安装 '${CHECK_VERSION}'，即将进行安装"
         pnpm add ${CHECK_VERSION} --global
     else 
