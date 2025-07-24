@@ -2,7 +2,7 @@
   "name": "a-type-of-js",
   "type": "module",
   "private": true,
-  "version": "1.0.6",
+  "version": "1.0.6-test.0",
   "description": "JavaScript/TypeScript 的类型检测工具，支持 TypeScript 类型收缩",
   "scripts": {
     "b": "rollup --config rollup.config.js && tsc -p tsconfig.types.json",

@@ -65,6 +65,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
+      # - name: 构建 pnpm 全局 bin
+
       - name: 发布到 npm
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
