@@ -1,6 +1,6 @@
 # a-type-of-js
 
-[![version](<https://img.shields.io/npm/v/a-type-of-js.svg?logo=npm&logoColor=rgb(0,0,0)&label=版本号&labelColor=rgb(73,73,228)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![Coverage Status](<https://img.shields.io/coverallsCoverage/github/earthnutDev/a-type-of-js?logo=coveralls&label=coveralls&labelColor=rgb(12, 244, 39)&color=rgb(0,0,0)>)](https://coveralls.io/github/earthnutDev/a-type-of-js?branch=main) [![codecov](<https://img.shields.io/codecov/c/github/earthnutDev/a-type-of-js/main?logo=codecov&label=codecov&labelColor=rgb(7, 245, 245)&color=rgb(0,0,0)>)](https://codecov.io/gh/earthnutDev/a-type-of-js) [![issues 提交](<https://img.shields.io/badge/issues-提交-rgb(255,0,63)?logo=github>)](https://github.com/earthnutDev/a-type-of-js/issues)
+[![version](<https://img.shields.io/npm/v/a-type-of-js.svg?logo=npm&logoColor=rgb(0,0,0)&label=版本号&labelColor=rgb(73,73,228)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/a-type-of-js) [![issues 提交](<https://img.shields.io/badge/issues-提交-rgb(255,0,63)?logo=github>)](https://github.com/earthnutDev/a-type-of-js/issues)
 
 一个简单的类型判断工具
 
@@ -129,7 +129,3 @@ function doSomething(value: string | number | boolean | ) {
 - `isTypeError` type 错误
 - `isURIError` uri 错误
 - `isAggregateError` aggregate 错误
-
-## 文档地址
-
-参看 [https://earthnut.dev/a-type-of-js/](https://earthnut.dev/a-type-of-js/)
