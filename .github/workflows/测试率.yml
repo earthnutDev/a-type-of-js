@@ -1,5 +1,5 @@
 name: 测试率自动化工具
-
+# 由于部分原因，当前已禁止了单元测试
 on:
   push:
     branches: [no-test]
