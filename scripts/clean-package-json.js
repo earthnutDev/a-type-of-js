@@ -34,8 +34,8 @@ packageJson = {
       },
     },
   },
-  keywords: ['a-type-of-js', 'type of js'],
-  homepage: 'https://github.com/earthnutDev/a-type-of-js',
+  keywords: ['a-type-of-js', 'earthnut', 'type of js'],
+  homepage: 'https://earthnut.dev/npm/a-type-of-js',
   bugs: {
     url: 'https://github.com/earthnutDev/a-type-of-js/issues',
     email: 'earthnut.dev@outlook.com',
