@@ -12,8 +12,8 @@ let packageJson = readFileToJsonSync('./package.json');
 );
 
 packageJson = {
-  main: 'index.cjs',
-  module: 'index.mjs',
+  main: 'index.cjs.js',
+  module: 'index.mjs.js',
   types: 'index.d.ts',
   author: {
     name: '花生亻',
@@ -25,11 +25,11 @@ packageJson = {
   exports: {
     '.': {
       import: {
-        default: './index.mjs',
+        default: './index.mjs.js',
         types: './index.d.ts',
       },
       require: {
-        default: './index.cjs',
+        default: './index.cjs.js',
         types: './index.d.ts',
       },
     },
